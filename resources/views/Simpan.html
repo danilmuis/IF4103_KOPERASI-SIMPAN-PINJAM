@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>K S P - Simpan</title>
+</head>
+<style>
+.kotakSimpan{
+        background-color: white;
+        width: 400px;
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        height: 500px;
+        border-radius: 10px;
+        border: 1px solid lightblue;
+        font-family:garamond;
+        box-shadow: 3px 3px gray;
+    }
+    #formSimpan{
+        margin: 30px 30px 30px 30px;
+    }
+    #formSimpan #ktk{
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid lightblue
+    }
+    #formSimpan #tmbl{
+        width: 100px;
+        height: 30px;
+        border: none;
+        float: right;
+        background-color: lightblue;
+        border-radius: 7px;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+    #tmbl:hover{
+        text-decoration-style: solid
+    }
+/* This is
+a multi-line
+comment */
+</style>
+</head>
+<body style="background:navy">
+    <div class="kotakSimpan">
+            <center><h1 style="font-size: 30px; font-family: sans-serif">Simpan</h1></center>
+            <div id="formSimpan">
+                Pilih tata cara penyimpanan
+                <div>
+                    ATM
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optradio" checked>Mandiri
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="optradio">BNI
+                    </label>
+                </div>
+                <div>
+                    Mercant
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="optradio">Indomart
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="optradio">Alfamart
+                    </label>
+                </div>
+                <div>
+                    Other
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="optradio">Bitcoin
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="optradio">PayPal
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="optradio">Koperasi
+                    </label>
+                </div>
+                <br>
+            </div>
+            <div class="posisi" id="formSimpan">
+                Nominal uang yang akan disimpan <br>
+                Rp. <input type="text" name="value" required id="ktk">
+                <br> <br>
+                <input id="tmbl" type="submit" value="Selesai">
+            </div>
+    </div>
+    <div class="container-fluid">
+        
+    </div>
+</body>
+</html>

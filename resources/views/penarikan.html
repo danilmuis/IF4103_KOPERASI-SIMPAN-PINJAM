@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>K S P - Penarikan</title>
+</head>
+<style>
+    .kotakTarik{
+        background-color: white;
+        width: 400px;
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        height: 300px;
+        border-radius: 10px;
+        border: 1px solid lightblue;
+        font-family:garamond;
+        box-shadow: 3px 3px gray;
+    }
+    #formTarik{
+        margin: 30px 30px 30px 30px;
+    }
+    #formTarik #ktkTarik{
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid lightblue
+    }
+    #formTarik #tmbl{
+        width: 100px;
+        height: 30px;
+        border: none;
+        float: right;
+        background-color: lightblue;
+        border-radius: 7px;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+    #tmbl:hover{
+        text-decoration-style: solid
+    }
+/* This is
+a multi-line
+comment */
+</style>
+</head>
+<body style="background:navy">
+    <div class="kotakTarik">
+            <center><h1 style="font-size: 30px; font-family: sans-serif">Penarikan</h1></center>
+            <div id="formTarik">
+                Pilih tata cara pengambilan
+                <div class="form-check">
+                    <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="optradio">Indomart
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="optradio">Alfamart
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                       <input type="radio" class="form-check-input" name="optradio">Koperasi
+                    </label>
+                </div>
+            </div>
+            <div class="posisi" id="formTarik">
+                Nominal uang yang akan ditarik <br>
+                Rp. <input type="text" name="value" required id="ktk">
+                <br> <br>
+                <input id="tmbl" type="submit" value="Selesai" id="tmbl">
+            </div>
+    </div>    
+    
+</body>
+</html>
