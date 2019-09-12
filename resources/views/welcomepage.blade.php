@@ -17,10 +17,10 @@
                             <img src="../assets/a.jpg" alt="Los Angeles" width="1100" height="500">
                           </div>
                           <div class="carousel-item">
-                            <img src="b.jpg" alt="Chicago" width="1100" height="500">  
+                            <img src="../assets/b.jpg" alt="Chicago" width="1100" height="500">  
                           </div>
                           <div class="carousel-item">
-                            <img src="a.jpg" alt="New York" width="1100" height="500">   
+                            <img src="../assets/a.jpg" alt="New York" width="1100" height="500">   
                           </div>
                         </div>
                         <a class="carousel-control-prev" href="#demo" data-slide="prev">

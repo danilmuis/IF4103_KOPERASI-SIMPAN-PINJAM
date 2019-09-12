@@ -100,7 +100,7 @@ comment */
 <body>
     <header>
               <nav class="navbar navbar-dark sticky-top nav1">
-                <a class="navbar-brand" href="#"><img id="logo" src="logo1.png" style="height: 50px" alt=""></a>
+                <a class="navbar-brand" href="#"><img id="logo" src="../assets/logo1.png" style="height: 50px" alt=""></a>
                 <div id="ld" style="float:right">
                 @yield('pojok_kanan')
                     
