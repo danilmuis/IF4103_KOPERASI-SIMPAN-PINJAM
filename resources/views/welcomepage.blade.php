@@ -1,7 +1,8 @@
 @extends ('master')
 
 @section('pojok_kanan')
-<h3 class="fas fa-user" style="height: 40px; width: 40px; text-align: center; padding-top: 6px; color: lightblue; margin-right: 50px;border-radius: 100px; border: 4px solid lightblue"></h3>
+    <button style="background-color: white; width: 60px">Login</button>
+    <button style="background-color: navy; border: 1px solid white; color: white; width: 60px">Daftar</button>
 @endsection
 @section('body')
     
@@ -13,7 +14,7 @@
                         </ul>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="a.jpg" alt="Los Angeles" width="1100" height="500">
+                            <img src="../assets/a.jpg" alt="Los Angeles" width="1100" height="500">
                           </div>
                           <div class="carousel-item">
                             <img src="b.jpg" alt="Chicago" width="1100" height="500">  

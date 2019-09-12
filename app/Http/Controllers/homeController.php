@@ -10,10 +10,10 @@ class homeController extends Controller
     {
        // $view = View::make('welcome.blade');
        // $view -> nest('welcome');
-       return view('home2');
+       return view('welcomepage');
         //return $view;
     }
-    public function welcome()
+    public function home()
     {
         return view('home');
         
