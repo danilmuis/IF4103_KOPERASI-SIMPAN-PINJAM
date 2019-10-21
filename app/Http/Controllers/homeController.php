@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class homeController extends Controller
 {
@@ -26,18 +28,22 @@ class homeController extends Controller
     public function login(Request $data)
     {
         $uname = $data->username;
-        $psw = encrypt($data->password);
+        $psw = ($data->password);
 
+        #$login = ['username' => $uname, 'password' =>$psw];
         $check = \App\akun::where('username',$uname)->first();
+        
+        
         if($check){
-            if(\App\akun::where('password',$psw)){
+            #return redirect('/')->with('alert',$check->password);
+            if(Hash::check($psw,$check->password)){
                 #Session::put('username',$uname);
                 #Session::put('login',TRUE);
                 return redirect('home')->with('login',$check);
             }else{
-                return redirect('/')->with('alert',"Username atau Password salah");
+                return redirect('/')->with('alert',"Username atau Password salwah");
             }
-
+            
         }else{
             return redirect('/')->with('alert','Username atau Password salah');
         }
@@ -62,7 +68,7 @@ class homeController extends Controller
         $akun =[
             'nik' => $data->nik,
             'username' => $data->uname,
-            'password' => encrypt($data->psw)
+            'password' => Hash::make($data->psw)
         ];
         \App\anggota::create($anggota);
         \App\akun::create($akun);

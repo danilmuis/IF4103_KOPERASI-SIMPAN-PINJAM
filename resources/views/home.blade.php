@@ -8,6 +8,7 @@
   mdm tes
 
     {{session('login')}}
+
 @endif
 <div id="demo" class="carousel slide" data-ride="carousel">
                         <ul class="carousel-indicators">

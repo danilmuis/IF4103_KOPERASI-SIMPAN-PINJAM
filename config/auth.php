@@ -36,10 +36,15 @@ return [
     */
 
     'guards' => [
+        'akun' => [
+            'driver' =>'session',
+            'provider' =>'akun',
+        ],
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        
 
         'api' => [
             'driver' => 'token',
@@ -66,10 +71,12 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'akun' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\akun::class,
         ],
+        
+        
 
         // 'users' => [
         //     'driver' => 'database',
