@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `akun` (
   `idAnggota` int(10) NOT NULL,
-  `NIK` varchar(16) DEFAULT NULL,
   `kredit` int(50) DEFAULT NULL,
   `debit` int(50) DEFAULT NULL,
   `username` varchar(20) DEFAULT NULL,

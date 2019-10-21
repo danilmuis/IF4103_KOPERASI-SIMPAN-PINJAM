@@ -8,6 +8,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        
 <style>
     .nav1{
         background-color: navy
@@ -91,7 +92,92 @@
         color: white;
         font-family: sans-serif;
         align-items: center;
+    }/* */
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
     }
+    .avatar {
+        width: 200px;
+        height:200px;
+        border-radius: 50%;
+    }
+    .modal {
+        display:none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 4% auto 15% auto;
+        border: 1px solid #888;
+        width: 40%;
+        padding-bottom: 30px;
+    }
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+    }
+    .close:hover,.close:focus {
+        color: red;
+        cursor: pointer;
+    }
+    .animate {
+        animation: zoom 0.6s
+    }
+    @keyframes zoom {
+        from {transform: scale(0)}
+        to {transform: scale(1)}
+    }
+    input[type=text], input[type=password] {
+        width: 90%;
+        padding: 12px 20px;
+        margin: 8px 26px;
+        display: inline-block;
+        border-radius:42px;
+        border:6px solid #29668f;
+        box-sizing: border-box;
+        font-size:16px;
+    }
+    .myButton {
+        box-shadow: 0px 10px 14px -7px #276873;
+        background:linear-gradient(to bottom, #00b7fa 5%, #00c5e3 100%);
+        background-color:#00b7fa;
+        border-radius:42px;
+        border:6px solid #29668f;
+        display:inline-block;
+        cursor:pointer;
+        color:#f5f5f5;
+        font-family:Arial;
+        font-size:21px;
+        font-weight:bold;
+        padding:10px 20px;
+        margin: 8px 200px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #3d768a;
+    }
+    .myButton:hover {
+        background:linear-gradient(to bottom, #00c5e3 5%, #00b7fa 100%);
+        background-color:#00c5e3;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+        
+    }
+
+      
 /* This is
 a multi-line
 comment */
@@ -100,9 +186,10 @@ comment */
 <body>
     <header>
               <nav class="navbar navbar-dark sticky-top nav1">
-                <a class="navbar-brand" href="#"><img id="logo" src="../assets/logo1.png" style="height: 50px" alt=""></a>
+                <a class="navbar-brand" href="{{ url('/')}}"><img id="logo" src="../assets/logo1.png" style="height: 50px" alt=""></a>
                 <div id="ld" style="float:right">
-                @yield('pojok_kanan')
+                    @yield('pojok_kanan')
+                
                     
                 </div>
               </nav>
@@ -135,5 +222,6 @@ comment */
  
 	<!-- bagian konten blog -->
 	@yield('body')
+ 
  
     @extends('footer')

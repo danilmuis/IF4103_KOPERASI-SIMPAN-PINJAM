@@ -1,11 +1,57 @@
 @extends ('master')
 
 @section('pojok_kanan')
-    <button style="background-color: white; width: 60px">Login</button>
-    <button style="background-color: navy; border: 1px solid white; color: white; width: 60px">Daftar</button>
+<button style="background-color: white; width: 60px" onclick="document.getElementById('modal-wrapper').style.display='block'"  >Login</button>
+    <a href=" {{action('homeController@registrasi')}}"><button style="background-color: navy; border: 1px solid white; color: white; width: 60px">Daftar</button></a>
+    
+
+
+    <div id="modal-wrapper" class="modal">
+
+        <form class="modal-content animate" action="{{url('login')}}" method="post">
+
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+            <img src="../assets/login.png" alt="Avatar" class="avatar">
+            
+        </div>
+
+        <div class="container">
+            {{csrf_field()}}
+            <input type="text" placeholder="Enter Username" name="username">
+            <input type="password" placeholder="Enter Password" name="password">
+            <button type="submit" class="myButton">Login</button>
+        </div>
+
+        </form>
+    </div>
+    
+    <script>
+    var modal = document.getElementById('modal-wrapper');
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    }
+    </script>
+    
 @endsection
 @section('body')
-    
+
+@foreach($data as $x)
+    {{$x->namaLengkap}}<br>
+@endforeach
+@if(session('regis'))
+  <marquee behavior="scroll" direction="left">
+    <img src="../assets/Smile-icon.png" width="100" height="100"><br>
+    {{ session('regis')  }}
+  </marquee>
+@endif
+@if(session('alert'))
+    <script>
+      alert('{{session('alert')}}');
+    </script>
+@endif
 <div id="demo" class="carousel slide" data-ride="carousel">
                         <ul class="carousel-indicators">
                           <li data-target="#demo" data-slide-to="0" class="active"></li>

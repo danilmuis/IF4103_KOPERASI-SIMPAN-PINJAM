@@ -17,4 +17,7 @@ Route::get('/', function () {
 Route::get('/','homeController@index');
 Route::get('home','homeController@home');  
 Route::get('home/welcome','homeController@welcome');  
+Route::get('registrasi','homeController@registrasi'); 
+Route::post('registrasi/create','homeController@create');
+Route::post('login','homeController@login');
 #AAA

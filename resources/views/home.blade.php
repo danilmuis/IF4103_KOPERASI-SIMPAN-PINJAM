@@ -4,7 +4,11 @@
 <h3 class="fas fa-user" style="height: 40px; width: 40px; text-align: center; padding-top: 6px; color: lightblue; margin-right: 50px;border-radius: 100px; border: 4px solid lightblue"></h3>
 @endsection
 @section('body')
-    
+@if(session('login'))
+  mdm tes
+
+    {{session('login')}}
+@endif
 <div id="demo" class="carousel slide" data-ride="carousel">
                         <ul class="carousel-indicators">
                           <li data-target="#demo" data-slide-to="0" class="active"></li>
