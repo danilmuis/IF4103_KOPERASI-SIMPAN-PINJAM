@@ -12,7 +12,7 @@
 
         <div class="imgcontainer">
             <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-            <img src="../assets/login.png" alt="Avatar" class="avatar">
+            <img src="{{ url('assets/login.png')}}" alt="Avatar" class="avatar">
             
         </div>
 
@@ -43,15 +43,11 @@
 @endforeach
 @if(session('regis'))
   <marquee behavior="scroll" direction="left">
-    <img src="../assets/Smile-icon.png" width="100" height="100"><br>
+    <img src="{{url('assets/Smile-icon.png')}}" width="100" height="100"><br>
     {{ session('regis')  }}
   </marquee>
 @endif
-@if(session('alert'))
-    <script>
-      alert('{{session('alert')}}');
-    </script>
-@endif
+
 <div id="demo" class="carousel slide" data-ride="carousel">
                         <ul class="carousel-indicators">
                           <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -60,13 +56,13 @@
                         </ul>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="../assets/a.jpg" alt="Los Angeles" width="1100" height="500">
+                            <img src="{{ url('assets/a.jpg')}}" alt="Los Angeles" width="1100" height="500">
                           </div>
                           <div class="carousel-item">
-                            <img src="../assets/b.jpg" alt="Chicago" width="1100" height="500">  
+                            <img src="{{ url('assets/b.jpg')}}" alt="Chicago" width="1100" height="500">  
                           </div>
                           <div class="carousel-item">
-                            <img src="../assets/a.jpg" alt="New York" width="1100" height="500">   
+                            <img src="{{ url('assets/a.jpg')}}" alt="New York" width="1100" height="500">   
                           </div>
                         </div>
                         <a class="carousel-control-prev" href="#demo" data-slide="prev">

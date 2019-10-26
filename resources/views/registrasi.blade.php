@@ -12,11 +12,11 @@
             <input type="text" placeholder="Alamat" name="alamat">
             <input type="text" placeholder="Tempat Lahir" name="tempat">
             <input type="date" name="tanggal"><br>
-            <input type="radio" name="agama" value="islam">Islam    
-            <input type="radio" name="agama" value="kristen">Kristen<br>
-            <input type="radio" name="agama" value="katholik">Katholik
-            <input type="radio" name="agama" value="budha">Budha<br>
-            <input type="radio" name="agama" value="hindu">Hindu<br>
+            <input type="radio" name="agama" value="Islam">Islam    
+            <input type="radio" name="agama" value="Kristen">Kristen<br>
+            <input type="radio" name="agama" value="Katholik">Katholik
+            <input type="radio" name="agama" value="Budha">Budha<br>
+            <input type="radio" name="agama" value="Hindu">Hindu<br>
             <button id="next"> next
         </div>
         <div id="second_registrasi">

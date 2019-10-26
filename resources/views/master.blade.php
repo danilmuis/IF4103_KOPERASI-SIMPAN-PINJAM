@@ -83,6 +83,95 @@
     #kurs{
         padding: 50px 50px 70px 50px;
     }
+    .kotakSimpan{
+        border-width: 10px;
+        border-style: dashed;
+        border-color: rgba(28,110,164,0.66);
+        margin:20px 20px 20px 20px;
+        padding:30px;
+        width:400px;
+       
+        
+        justify-content: center;
+}
+    }
+    #formSimpan{
+        margin: 30px 30px 30px 30px;
+    }
+    #formSimpan #ktk{
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid lightblue
+    }
+    #formSimpan #tmbl{
+        width: 100px;
+        height: 30px;
+        border: none;
+        float: right;
+        background-color: lightblue;
+        border-radius: 7px;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+    #tmbl:hover{
+        text-decoration-style: solid
+    }
+    .kotakPinjam{
+        border-width: 10px;
+        border-style: dashed;
+        border-color: rgba(28,110,164,0.66);
+        margin:20px 20px 20px 20px;
+        padding:30px;
+        width:400px;
+       
+        
+        justify-content: center;
+    }
+    #formPinjam{
+        margin: 30px 30px 30px 30px;
+    }
+    #formPinjam #ktkPinjam{
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid lightblue
+    }
+    #formPinjam #tmbl{
+        width: 100px;
+        height: 30px;
+        border: none;
+        float: right;
+        background-color: lightblue;
+        border-radius: 7px;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+    .kotakTf{
+        border-width: 10px;
+        border-style: dashed;
+        border-color: rgba(28,110,164,0.66);
+        margin:20px 20px 20px 20px;
+        padding:30px;
+        width:400px;
+    }
+    .formTf {
+        margin: 30px 30px 30px 30px;
+        background-color: white
+    }
+    .formTf .ktkTf{
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid lightblue
+    }
+    .formTf #tmbl{
+        width: 100px;
+        height: 30px;
+        border: none;
+        float: right;
+        background-color: lightblue;
+        border-radius: 7px;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
     .foot{
         width 100px;
         display: inline-block;
@@ -184,12 +273,24 @@ comment */
 </style>
 </head>
 <body>
+
+@if(session('login'))
+  mdm tes
+  {{Session::get('account')}}
+  
+ 
+@endif
+@if(session('alert'))
+    <script>
+      alert('{{session('alert')}}');
+    </script>
+@endif
     <header>
               <nav class="navbar navbar-dark sticky-top nav1">
-                <a class="navbar-brand" href="{{ url('/')}}"><img id="logo" src="../assets/logo1.png" style="height: 50px" alt=""></a>
+                <a class="navbar-brand" href="{{ url('/')}}"><img id="logo" src="{{ url('assets/logo1.png')}}" style="height: 50px" alt=""></a>
                 <div id="ld" style="float:right">
                     @yield('pojok_kanan')
-                
+                    
                     
                 </div>
               </nav>
@@ -203,11 +304,11 @@ comment */
                                 Transaksi
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Simpan</a>
-                                <a class="dropdown-item" href="#">Pinjam</a>
-                                <a class="dropdown-item" href="#">Transfer</a>
-                                <a class="dropdown-item" href="#">Penarikan</a>
-                                <a class="dropdown-item" href="#">Bayar Pinjaman</a>
+                                <a class="dropdown-item" href="{{url('home/simpanan')}}">Simpan</a>
+                                <a class="dropdown-item" href="{{url('home/pinjaman')}}">Pinjam</a>
+                                <a class="dropdown-item" href="{{url('home/transferan')}}">Transfer</a>
+                                <a class="dropdown-item" href="{{url('home/penarikan')}}">Penarikan</a>
+                                <a class="dropdown-item" href="{{url('home/pelunasan')}}">Bayar Pinjaman</a>
                             </div>
                         </li>
                         <li class="nav-item">

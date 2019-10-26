@@ -1,15 +1,33 @@
 @extends ('master')
 
 @section('pojok_kanan')
-<h3 class="fas fa-user" style="height: 40px; width: 40px; text-align: center; padding-top: 6px; color: lightblue; margin-right: 50px;border-radius: 100px; border: 4px solid lightblue"></h3>
+  <a href="{{url('logout')}}"><h3 class="fas fa-user" style="height: 40px; width: 40px; text-align: center; padding-top: 6px; color: lightblue; margin-right: 50px;border-radius: 100px; border: 4px solid lightblue"></h3></a>
 @endsection
 @section('body')
-@if(session('login'))
-  mdm tes
+<table class="table table-hover table-info">
+  <thead>
+    <tr>
+      <th scope="col">No Transaksi</th>
+      <th scope="col">Jumlah</th>
+      <th scope="col">Jenis Transaksi</th>
+      <th scope="col">Waktu Transaksi</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    @foreach($data as $x)
+        <tr>
+            <th scope="row">{{$x->noTransaksi}}</th>
+            <td>{{$x->jumlahUang}}</td>
+            <td>{{$x->jenisTransaksi}}</td>
+            <td>{{$x->waktuTransaksi}}</td>
+            
+        </tr>
+    @endforeach
 
-    {{session('login')}}
-
-@endif
+  </tbody>
+</table>
 <div id="demo" class="carousel slide" data-ride="carousel">
                         <ul class="carousel-indicators">
                           <li data-target="#demo" data-slide-to="0" class="active"></li>

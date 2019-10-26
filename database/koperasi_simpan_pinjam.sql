@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2019 at 06:46 AM
+-- Generation Time: Oct 26, 2019 at 05:37 AM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -30,10 +30,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `akun` (
   `idAnggota` int(10) NOT NULL,
-  `kredit` int(50) DEFAULT NULL,
-  `debit` int(50) DEFAULT NULL,
+  `NIK` varchar(16) DEFAULT NULL,
+  `kredit` int(50) DEFAULT 0,
+  `debit` int(50) DEFAULT 50000,
   `username` varchar(20) DEFAULT NULL,
-  `password` varchar(20) DEFAULT NULL
+  `password` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -50,7 +51,8 @@ INSERT INTO `akun` (`idAnggota`, `NIK`, `kredit`, `debit`, `username`, `password
 (1006, '11110023398', 0, 50000, 'A07', '123456'),
 (1007, '11110023399', 0, 50000, 'A08', '123456'),
 (1008, '11110023391', 0, 50000, 'A09', '123456'),
-(1009, '11110023390', 0, 50000, 'A10', '123456');
+(1009, '11110023390', 0, 50000, 'A10', '123456'),
+(1028, 'a', 0, 50090, 'a', '$2y$10$WxcBwa8M0DhOHp46H80L5u3q.YC0yAOfE/td2TtRm8CqcDQwA5hqC');
 
 -- --------------------------------------------------------
 
@@ -80,7 +82,8 @@ INSERT INTO `anggota` (`NIK`, `namaLengkap`, `alamat`, `TTL`, `agama`) VALUES
 ('11110023396', 'Muhammad Budi', 'sukabirus', 'Medan,19-02-1999', 'Islam'),
 ('11110023397', 'Muhammad Ryan', 'sukabirus', 'Medan,20-05-1999', 'Islam'),
 ('11110023398', 'Muhammad Bayu', 'sukabirus', 'Medan,01-09-1999', 'Islam'),
-('11110023399', 'Muhammad Dicky', 'sukabirus', 'Medan,12-12-1999', 'Islam');
+('11110023399', 'Muhammad Dicky', 'sukabirus', 'Medan,12-12-1999', 'Islam'),
+('a', 'a', 'a', 'a, 2019-10-14', 'Islam');
 
 -- --------------------------------------------------------
 
@@ -149,25 +152,28 @@ CREATE TABLE `transaksi` (
   `noTransaksi` varchar(20) NOT NULL,
   `jumlahUang` int(50) DEFAULT NULL,
   `jenisTransaksi` varchar(20) DEFAULT NULL,
-  `waktuTransaksi` datetime DEFAULT NULL ON UPDATE current_timestamp(),
-  `idAnggota` int(10) DEFAULT NULL
+  `waktuTransaksi` datetime DEFAULT current_timestamp(),
+  `mediaPembayaran` varchar(20) DEFAULT NULL,
+  `idAnggota` int(10) DEFAULT NULL,
+  `idTujuan` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`noTransaksi`, `jumlahUang`, `jenisTransaksi`, `waktuTransaksi`, `idAnggota`) VALUES
-('T001', 0, 'Simpan', '2019-09-07 11:45:38', 1000),
-('T002', 0, 'Simpan', '2019-09-07 11:45:38', 1001),
-('T003', 0, 'Simpan', '2019-09-07 11:45:38', 1002),
-('T004', 0, 'Simpan', '2019-09-07 11:45:38', 1003),
-('T005', 0, 'Simpan', '2019-09-07 11:45:38', 1004),
-('T006', 0, 'Simpan', '2019-09-07 11:45:38', 1005),
-('T007', 0, 'Simpan', '2019-09-07 11:45:38', 1006),
-('T008', 0, 'Simpan', '2019-09-07 11:45:38', 1007),
-('T009', 0, 'Simpan', '2019-09-07 11:45:38', 1008),
-('T010', 0, 'Simpan', '2019-09-07 11:45:38', 1009);
+INSERT INTO `transaksi` (`noTransaksi`, `jumlahUang`, `jenisTransaksi`, `waktuTransaksi`, `mediaPembayaran`, `idAnggota`, `idTujuan`) VALUES
+('T001', 0, 'Simpan', '2019-09-07 11:45:38', '', 1000, NULL),
+('T002', 0, 'Simpan', '2019-09-07 11:45:38', '', 1001, NULL),
+('T003', 0, 'Simpan', '2019-09-07 11:45:38', '', 1002, NULL),
+('T004', 0, 'Simpan', '2019-09-07 11:45:38', '', 1003, NULL),
+('T005', 0, 'Simpan', '2019-09-07 11:45:38', '', 1004, NULL),
+('T006', 0, 'Simpan', '2019-09-07 11:45:38', '', 1005, NULL),
+('T007', 0, 'Simpan', '2019-09-07 11:45:38', '', 1006, NULL),
+('T008', 0, 'Simpan', '2019-09-07 11:45:38', '', 1007, NULL),
+('T009', 0, 'Simpan', '2019-09-07 11:45:38', '', 1008, NULL),
+('T010', 0, 'Simpan', '2019-09-07 11:45:38', '', 1009, NULL),
+('T011', 90, 'Simpanan', '2019-10-26 10:32:05', 'Bank Mandiri', 1028, NULL);
 
 --
 -- Indexes for dumped tables
@@ -215,7 +221,7 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `idAnggota` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1010;
+  MODIFY `idAnggota` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1029;
 
 --
 -- AUTO_INCREMENT for table `pengurus`
