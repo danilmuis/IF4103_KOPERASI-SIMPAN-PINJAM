@@ -4,7 +4,7 @@
 @endsection
 @section('body')
 <div class="kotakTf">
-    <center><h1 style="font-size: 30px; font-family: sans-serif">Penarikan</h1></center>
+    <center><h1 style="font-size: 30px; font-family: sans-serif">Pelunasan</h1></center>
     <div id="formTarik">
     <form method="post" action="transaksi/lunas">
     {{csrf_field()}}

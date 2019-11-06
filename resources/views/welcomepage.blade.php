@@ -16,10 +16,10 @@
             
         </div>
 
-        <div class="container">
+        <div class="container" id="formLogin">
             {{csrf_field()}}
-            <input type="text" placeholder="Enter Username" name="username">
-            <input type="password" placeholder="Enter Password" name="password">
+            <input type="text" placeholder="Enter Username" name="username" class="ktkLogin">
+            <input type="password" placeholder="Enter Password" name="password" class="ktkLogin">
             <button type="submit" class="myButton">Login</button>
         </div>
 

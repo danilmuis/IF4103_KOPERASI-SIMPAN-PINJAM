@@ -7,11 +7,11 @@
 <form method="POST" action="{{url('registrasi/create')}}">
     {{csrf_field()}}
         <div id="first_registrasi">
-            <input type="text" placeholder="Nama Lengkap" name="namaLengkap">
-            <input type="text" placeholder="NIK" name="nik">
-            <input type="text" placeholder="Alamat" name="alamat">
-            <input type="text" placeholder="Tempat Lahir" name="tempat">
-            <input type="date" name="tanggal"><br>
+            <input type="text" class="ktkRegis" placeholder="Nama Lengkap" name="namaLengkap"><br>
+            <input type="text" class="ktkRegis" placeholder="NIK" name="nik"><br>
+            <input type="text" class="ktkRegis" placeholder="Alamat" name="alamat"><br>
+            <input type="text" class="ktkRegis" placeholder="Tempat Lahir" name="tempat"><br>
+            <input type="date" class="dateRegis" name="tanggal"><br>
             <input type="radio" name="agama" value="Islam">Islam    
             <input type="radio" name="agama" value="Kristen">Kristen<br>
             <input type="radio" name="agama" value="Katholik">Katholik

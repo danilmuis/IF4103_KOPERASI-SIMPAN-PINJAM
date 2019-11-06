@@ -85,16 +85,56 @@
     }
     .kotakSimpan{
         border-width: 10px;
-        border-style: dashed;
-        border-color: rgba(28,110,164,0.66);
         margin:20px 20px 20px 20px;
+        margin:auto;
         padding:30px;
         width:400px;
-       
         
         justify-content: center;
-}
     }
+    
+    
+    #formLogin{
+        margin: 30px 30px 30px 30px;
+    }
+    #formLogin .ktkLogin{
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid lightblue
+    }
+    #formLogin #tmbllogin{
+        width: 100px;
+        height: 30px;
+        border: none;
+        float: right;
+        background-color: lightblue;
+        border-radius: 7px;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+
+    #first_registrasi{
+        margin: 30px 30px 30px 30px;
+    }
+    #first_registrasi .ktkRegis{
+        width: 80%;
+        border: none;
+        border-bottom: 1px solid lightblue
+    }
+    #first_registrasi #next{
+        width: 100px;
+        height: 30px;
+        border: none;
+        float: right;
+        background-color: lightblue;
+        border-radius: 7px;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+    #next:hover{
+        text-decoration-style: solid
+    }
+
     #formSimpan{
         margin: 30px 30px 30px 30px;
     }
@@ -118,12 +158,10 @@
     }
     .kotakPinjam{
         border-width: 10px;
-        border-style: dashed;
-        border-color: rgba(28,110,164,0.66);
         margin:20px 20px 20px 20px;
+        margin:auto;
         padding:30px;
         width:400px;
-       
         
         justify-content: center;
     }
@@ -147,9 +185,8 @@
     }
     .kotakTf{
         border-width: 10px;
-        border-style: dashed;
-        border-color: rgba(28,110,164,0.66);
         margin:20px 20px 20px 20px;
+        margin:auto;
         padding:30px;
         width:400px;
     }
@@ -163,6 +200,42 @@
         border-bottom: 1px solid lightblue
     }
     .formTf #tmbl{
+        width: 100px;
+        height: 30px;
+        border: none;
+        float: right;
+        background-color: lightblue;
+        border-radius: 7px;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+    #formTarik{
+        margin: 30px 30px 30px 30px;
+    }
+    #formTarik #ktk{
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid lightblue
+    }
+    #formTarik #tmbl{
+        width: 100px;
+        height: 30px;
+        border: none;
+        float: right;
+        background-color: lightblue;
+        border-radius: 7px;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+    #formBayar{
+        margin: 30px 30px 30px 30px;
+    }
+    #formBayar #ktk{
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid lightblue
+    }
+    #formBayar #tmbl{
         width: 100px;
         height: 30px;
         border: none;
@@ -234,8 +307,7 @@
         padding: 12px 20px;
         margin: 8px 26px;
         display: inline-block;
-        border-radius:42px;
-        border:6px solid #29668f;
+        border-bottom:6px solid #29668f;
         box-sizing: border-box;
         font-size:16px;
     }
@@ -297,7 +369,7 @@ comment */
               <nav id="bawah" class="bawah navbar navbar-expand-sm nav2 justify-content-end" style="padding-right:100px">
                     <ul class="navbar-nav ha">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="{{ url('/')}}">Home</a>
                         </li>
                         <li class="nav-item dropright">
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
