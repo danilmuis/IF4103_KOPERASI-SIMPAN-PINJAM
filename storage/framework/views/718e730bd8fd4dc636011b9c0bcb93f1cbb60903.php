@@ -17,8 +17,9 @@
         <div class="container" id="formLogin">
             <?php echo e(csrf_field()); ?>
 
-            <input type="text" placeholder="Enter Username" name="username" class="ktkLogin">
-            <input type="password" placeholder="Enter Password" name="password" class="ktkLogin">
+            <input style="margin-left: 100px" type="text" placeholder="Enter Username" name="username" class="ktkLogin">
+            <input style="margin-left: 100px"  type="password" placeholder="Enter Password" name="password" class="ktkLogin"><br>
+            <a href="" style="margin-left:180px">belum punya akun?</a>
             <button type="submit" class="myButton">Login</button>
         </div>
 

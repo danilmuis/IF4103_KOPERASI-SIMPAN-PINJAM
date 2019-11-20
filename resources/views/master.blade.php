@@ -38,6 +38,9 @@
         </script>
         
 <style>
+    #error{
+        color:red;
+    }
     a:hover{
         text-decoration:none;
     }

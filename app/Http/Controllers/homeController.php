@@ -234,8 +234,13 @@ class homeController extends Controller
         #var_dump(request('publisher'));
         #var_dump(request('releasedate'));
         $validator = Validator::make($data->all(),[
-            'nik' => 'required|numeric|max:10',
-            'namaLengkap' => 'required|alpha' 
+            'nik' => 'required|numeric|min:16|unique:anggota',
+            'namaLengkap' => 'required|alpha',
+            'alamat' => 'required|alpha_num|',
+            'TTL' => 'required|alpha_num|',
+            'username' => 'required|alpha_num|unique:akun|min:4|max:10',
+            'psw' => 'required|alpha_num|min:4|max:10',
+            'tempat' => 'required|alpha'
         ]);
         if($validator ->fails())
         {
@@ -253,7 +258,7 @@ class homeController extends Controller
 
         $akun =[
             'nik' => $data->nik,
-            'username' => $data->uname,
+            'username' => $data->username,
             'password' => Hash::make($data->psw)
         ];
         \App\anggota::create($anggota);
