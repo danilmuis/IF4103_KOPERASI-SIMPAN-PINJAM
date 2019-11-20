@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <link rel="shortcut icon" href="">
+        <link rel="shortcut icon" href="http://localhost/IF4103_KOPERASI-SIMPAN-PINJAM/public/assets/logo.png=">
         <title>Koperasi Simpan Pinjam</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -148,7 +148,7 @@
     }
 
     #first_registrasi{
-        margin: 30px 30px 30px 230px;4
+        margin: 30px 30px 30px 480px;4
         
     }
     #porm{
@@ -163,7 +163,7 @@
         margin: 30px 30px 30px 30px;
     }
     #first_registrasi .ktkRegis{
-        width: 80%;
+        width: 50%;
         border: none;
         border-bottom: 1px solid lightblue
     }
@@ -414,8 +414,16 @@ comment */
     </script>
 <?php endif; ?>
     <header>
+    <?php
+    if(Session::get('login')){
+        $x="/home";
+    }else{
+        $x="";
+    }
+    ?>            
+    
               <nav class="navbar navbar-dark sticky-top nav1">
-                <a class="navbar-brand" href="<?php echo e(url('/')); ?>"><img id="logo" src="<?php echo e(url('assets/logo1.png')); ?>" style="height: 50px" alt=""></a>
+                <a class="navbar-brand" href="<?php echo e(url('/')); ?><?php echo e($x); ?>"><img id="logo" src="<?php echo e(url('assets/logo1.png')); ?>" style="height: 50px" alt=""></a>
                 <div id="ld" style="float:right">
                     <?php echo $__env->yieldContent('pojok_kanan'); ?>
                     
@@ -425,7 +433,9 @@ comment */
               <nav id="bawah" class="bawah navbar navbar-expand-sm nav2 justify-content-end" style="padding-right:100px">
                     <ul class="navbar-nav ha">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo e(url('/')); ?>">Home</a>
+                            
+                            
+                            <a class="nav-link" href="<?php echo e(url('')); ?><?php echo e($x); ?>">Home</a>
                         </li>
                         <li class="nav-item dropright">
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">

@@ -59,10 +59,17 @@ class homeController extends Controller
     }
     public function simpanan()
     {
-        return view('simpan');
+        if(!Session::get('login'))
+        {
+           return redirect('/')->with('alert','Silahkan Login terlebih dahulu');
+        }else
+        {
+            return view('simpan');
+        }
     }
     public function simpan(Request $data)
     {
+        
         $akun = Session::get('account');
         $noTransaksi = DB::table('transaksi')->count()+1;
         $transaksi=[
@@ -84,7 +91,14 @@ class homeController extends Controller
     }
     public function pinjaman()
     {
-        return view('pinjam');
+        if(!Session::get('login'))
+        {
+           return redirect('/')->with('alert','Silahkan Login terlebih dahulu');
+        }else
+        {
+            return view('pinjam');
+            
+        }
     }
     public function pinjam(Request $data)
     {
@@ -109,7 +123,14 @@ class homeController extends Controller
     }
     public function transferan()
     {
+        if(!Session::get('login'))
+        {
+           return redirect('/')->with('alert','Silahkan Login terlebih dahulu');
+        }else{
+
+        
         return view('transfer');
+        }
     }
     public function transfer(Request $data)
     {
@@ -137,7 +158,14 @@ class homeController extends Controller
     }
     public function penarikan()
     {
-        return view('penarikan');
+        if(!Session::get('login'))
+        {
+           return redirect('/')->with('alert','Silahkan Login terlebih dahulu');
+        }else
+        {
+            return view('penarikan');
+    
+        }   
     }
     
     public function tarik(Request $data)
@@ -163,7 +191,14 @@ class homeController extends Controller
     }
     public function pelunasan()
     {
-        return view('pelunasan');
+        if(!Session::get('login'))
+        {
+           return redirect('/')->with('alert','Silahkan Login terlebih dahulu');
+        }else
+        {
+            return view('pelunasan');
+    
+        }
     }
     
     public function lunas(Request $data)

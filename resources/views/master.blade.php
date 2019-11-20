@@ -413,9 +413,16 @@ comment */
     </script>
 @endif
     <header>
+    @php
+    if(Session::get('login')){
+        $x="/home";
+    }else{
+        $x="";
+    }
+    @endphp            
     
               <nav class="navbar navbar-dark sticky-top nav1">
-                <a class="navbar-brand" href="{{ url('/')}}"><img id="logo" src="{{ url('assets/logo1.png')}}" style="height: 50px" alt=""></a>
+                <a class="navbar-brand" href="{{ url('/')}}{{$x}}"><img id="logo" src="{{ url('assets/logo1.png')}}" style="height: 50px" alt=""></a>
                 <div id="ld" style="float:right">
                     @yield('pojok_kanan')
                     
@@ -425,7 +432,9 @@ comment */
               <nav id="bawah" class="bawah navbar navbar-expand-sm nav2 justify-content-end" style="padding-right:100px">
                     <ul class="navbar-nav ha">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/')}}">Home</a>
+                            
+                            
+                            <a class="nav-link" href="{{ url('')}}{{$x}}">Home</a>
                         </li>
                         <li class="nav-item dropright">
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
