@@ -26,6 +26,8 @@ Route::get('home/penarikan','homeController@penarikan');
 Route::get('home/pelunasan','homeController@pelunasan');
 Route::get('logout','homeController@logout');
 
+Route::get('/new','homeController@new');
+
 Route::post('registrasi/create','homeController@create');
 Route::post('login','homeController@login');
 Route::post('home/transaksi/simpan','homeController@simpan');

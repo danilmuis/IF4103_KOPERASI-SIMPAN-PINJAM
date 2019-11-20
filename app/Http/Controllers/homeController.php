@@ -249,6 +249,9 @@ class homeController extends Controller
         #return $data->ttl;
 
     }
-    
+    public function new(){
+        $data_anggota = \App\anggota::all();
+        return view('newWelcome',['data' =>$data_anggota]);
+    }
 
 }
