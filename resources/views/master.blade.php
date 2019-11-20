@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <link rel="shortcut icon" href="">
+        <link rel="shortcut icon" href="http://localhost/IF4103_KOPERASI-SIMPAN-PINJAM/public/assets/logo.png=">
         <title>Koperasi Simpan Pinjam</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -145,7 +145,7 @@
     }
 
     #first_registrasi{
-        margin: 30px 30px 30px 230px;4
+        margin: 30px 30px 30px 480px;4
         
     }
     #porm{
@@ -160,7 +160,7 @@
         margin: 30px 30px 30px 30px;
     }
     #first_registrasi .ktkRegis{
-        width: 80%;
+        width: 50%;
         border: none;
         border-bottom: 1px solid lightblue
     }
@@ -410,6 +410,7 @@ comment */
     </script>
 @endif
     <header>
+    
               <nav class="navbar navbar-dark sticky-top nav1">
                 <a class="navbar-brand" href="{{ url('/')}}"><img id="logo" src="{{ url('assets/logo1.png')}}" style="height: 50px" alt=""></a>
                 <div id="ld" style="float:right">
