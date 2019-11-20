@@ -1,22 +1,23 @@
-<?php $__env->startSection('pojok_kanan'); ?>
+@extends ('master')
+
+@section('pojok_kanan')
 <button style="background-color: white; width: 60px" onclick="document.getElementById('modal-wrapper').style.display='block'"  >Login</button>
-    <a href=" <?php echo e(action('homeController@registrasi')); ?>"><button style="background-color: navy; border: 1px solid white; color: white; width: 60px">Daftar</button></a>
+    <a href=" {{action('homeController@registrasi')}}"><button style="background-color: navy; border: 1px solid white; color: white; width: 60px">Daftar</button></a>
     
 
 
     <div id="modal-wrapper" class="modal">
 
-        <form class="modal-content animate" action="<?php echo e(url('login')); ?>" method="post">
+        <form class="modal-content animate" action="{{url('login')}}" method="post">
 
         <div class="imgcontainer">
             <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-            <img src="<?php echo e(url('assets/login.png')); ?>" alt="Avatar" class="avatar">
+            <img src="{{ url('assets/login.png')}}" alt="Avatar" class="avatar">
             
         </div>
 
         <div class="container" id="formLogin">
-            <?php echo e(csrf_field()); ?>
-
+            {{csrf_field()}}
             <input type="text" placeholder="Enter Username" name="username" class="ktkLogin">
             <input type="password" placeholder="Enter Password" name="password" class="ktkLogin">
             <button type="submit" class="myButton">Login</button>
@@ -34,17 +35,16 @@
     }
     </script>
     
-<?php $__env->stopSection(); ?>
-<?php $__env->startSection('body'); ?>
+@endsection
+@section('body')
 
 
-<?php if(session('regis')): ?>
+@if(session('regis'))
   <marquee behavior="scroll" direction="left">
-    <img src="<?php echo e(url('assets/Smile-icon.png')); ?>" width="100" height="100"><br>
-    <?php echo e(session('regis')); ?>
-
+    <img src="{{url('assets/Smile-icon.png')}}" width="100" height="100"><br>
+    {{ session('regis')  }}
   </marquee>
-<?php endif; ?>
+@endif
 
     <!-- Preloader -->
     
@@ -483,7 +483,5 @@
     <!-- Active js -->
     <script src="js/active.js"></script>
     
-<?php $__env->stopSection(); ?>
+@endsection
 
-
-<?php echo $__env->make('master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\xampp\htdocs\IF4103_KOPERASI-SIMPAN-PINJAM\resources\views/welcomepage.blade.php ENDPATH**/ ?>
