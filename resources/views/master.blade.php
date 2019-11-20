@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <link rel="shortcut icon" href="">
         <title>Koperasi Simpan Pinjam</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,8 +9,37 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="jquery-2.1.4.js"></script>
+        <script>
+        $(document).ready(function() {
+            $("#second_registrasi").hide();
+            
+            $("#next").click(function() {
+                var a = $("#reg1").val();
+                var b = $("#reg2").val();
+                var c = $("#reg3").val();
+                var d = $("#reg4").val();
+                var e = $("#reg5").val();
+                var f = $(".reg6").val();
+
+                if ((a != '') && (b != '') && (c != '') && (d != '') && (e != '') && (f != '')){
+                    $("#second_registrasi").show();
+                    $("#first_registrasi").hide();
+                    $("#next").hide()
+                }
+                else{
+                    $("#first_registrasi").show();
+                    $("#next").show();
+                }
+                    
+            })        
+        });
+        </script>
         
 <style>
+    a:hover{
+        text-decoration:none;
+    }
     .nav1{
         background-color: navy
     }
@@ -114,6 +144,18 @@
     }
 
     #first_registrasi{
+        margin: 30px 30px 30px 230px;4
+        
+    }
+    #porm{
+        position: absolute;
+        top: 500px;
+        right: 100px
+    }
+    #second_registrasi{
+        margin: 30px 30px 30px 600px;
+    }
+    #first_registrasi #dalam{
         margin: 30px 30px 30px 30px;
     }
     #first_registrasi .ktkRegis{
@@ -121,17 +163,26 @@
         border: none;
         border-bottom: 1px solid lightblue
     }
-    #first_registrasi #next{
+    #next{
+        margin: 30px 30px 30px 230px;
         width: 100px;
         height: 30px;
         border: none;
-        float: right;
         background-color: lightblue;
         border-radius: 7px;
         border-radius: 5px;
         font-family: sans-serif;
     }
-    #next:hover{
+    #second_registrasi #reg{
+        width: 100px;
+        height: 30px;
+        border: none;
+        background-color: lightblue;
+        border-radius: 7px;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+    #next:hover, #reg:hover{
         text-decoration-style: solid
     }
 
@@ -303,12 +354,12 @@
         to {transform: scale(1)}
     }
     input[type=text], input[type=password] {
-        width: 90%;
+        width: 30%;
         padding: 12px 20px;
         margin: 8px 26px;
         display: inline-block;
-        border-bottom:6px solid #29668f;
-        box-sizing: border-box;
+        border: none;
+        border-bottom:3px solid #29668f; 
         font-size:16px;
     }
     .myButton {

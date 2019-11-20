@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class homeController extends Controller
 {
@@ -89,6 +90,8 @@ class homeController extends Controller
     {
         $akun = Session::get('account');
         $noTransaksi = DB::table('transaksi')->count()+1;
+        
+        
         $transaksi=[
            'noTransaksi' => "T0".$noTransaksi,
            'jumlahUang' => $data->jumlahUang,
@@ -230,6 +233,16 @@ class homeController extends Controller
         #var_dump(request('title'));
         #var_dump(request('publisher'));
         #var_dump(request('releasedate'));
+        $validator = Validator::make($data->all(),[
+            'nik' => 'required|numeric|max:10',
+            'namaLengkap' => 'required|alpha' 
+        ]);
+        if($validator ->fails())
+        {
+            return redirect('registrasi')
+                ->withErrors($validator)
+                ->withInput();
+        }
         $anggota =[
             'nik' => $data->nik,
             'namaLengkap' => $data->namaLengkap,
