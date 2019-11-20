@@ -7,12 +7,10 @@
 <form method="POST" action="{{url('registrasi/create')}}">
     {{csrf_field()}}
         <div id="first_registrasi">
-            <input id="reg1" type="text" class="ktkRegis" placeholder="Nama Lengkap" name="namaLengkap"><br>
-            <input id="reg2"  type="text" class="ktkRegis" placeholder="NIK" name="nik">@if($errors->any())
-{{$errors->first()}}
-@endif<br>
-            <input id="reg3"  type="text" class="ktkRegis" placeholder="Alamat" name="alamat"><br>
-            <input id="reg4"  type="text" class="ktkRegis" placeholder="Tempat Lahir" name="tempat"><br>
+            <input id="reg1" type="text" class="ktkRegis" placeholder="Nama Lengkap" name="namaLengkap">@error('namaLengkap')<h7 id="error"> {{$message}}</h7> @enderror<br>
+            <input id="reg2"  type="text" class="ktkRegis" placeholder="NIK" name="nik">@error('nik')<h7 id="error"> {{$message}}</h7> @enderror<br>
+            <input id="reg3"  type="text" class="ktkRegis" placeholder="Alamat" name="alamat">@error('alamat') <h7 id="error"> {{$message}} </h7> @enderror<br>
+            <input id="reg4"  type="text" class="ktkRegis" placeholder="Tempat Lahir" name="tempat">@error('tempat') <h7 id="error"> {{$message}} </h7> @enderror<br>
             <div id="dalam">
                 <input id="reg5" type="date" class="dateRegis" name="tanggal" required><br><br>
                 <input class="reg6" type="radio" name="agama" value="Islam">Islam    
@@ -24,8 +22,8 @@
             </div>
         </div>
         <div id="second_registrasi">
-            <input type="text" placeholder="Username" name="uname" required><br>
-            <input type="password" placeholder="Password" name="psw" required><br>
+            <input type="text" placeholder="Username" name="username" required>@error('uname') <h7 id="error"> {{$message}} </h7> @enderror<br>
+            <input type="password" placeholder="Password" name="psw" required>@error('psw') <h7 id="error"> {{$message}} </h7> @enderror<br>
             <input type="password" placeholder="Re-Enter Password" name="psw2" required><br><br>
             <input id="reg" type="submit" style="margin-left:50px" value="registrasi">
         </div>
