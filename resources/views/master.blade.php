@@ -392,6 +392,33 @@
         top:1px;
         
     }
+    .bukti{
+        border-width: 10px;
+        margin:20px 20px 20px 20px;
+        margin:auto;
+        padding:30px;
+        width:400px;
+        
+        justify-content: center;
+    }
+    .buktiTransaksi {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        width: 533px;
+        height: 330px;
+        padding:30px;
+        margin: 109px 309px 109px 509px;
+        border: 4px solid rgba(93,178,234,0.91);
+        -webkit-border-radius: 17px;
+        border-radius: 17px;
+        font: normal 20px/1 Impact, Charcoal, sans-serif;
+        color: rgba(255,255,255,1);
+        text-align: center;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        color:black;
+    }
 
       
 /* This is
@@ -402,10 +429,7 @@ comment */
 <body>
 
 @if(session('login'))
-  mdm tes
-  {{Session::get('account')}}
-  
- 
+  {{Session::get('account')}}   
 @endif
 @if(session('alert'))
     <script>
@@ -414,13 +438,13 @@ comment */
 @endif
     <header>
     @php
-    if(Session::get('login')){
+    if(Session::get('login'))
+    {
         $x="/home";
     }else{
         $x="";
     }
     @endphp            
-    
               <nav class="navbar navbar-dark sticky-top nav1">
                 <a class="navbar-brand" href="{{ url('/')}}{{$x}}"><img id="logo" src="{{ url('assets/logo1.png')}}" style="height: 50px" alt=""></a>
                 <div id="ld" style="float:right">

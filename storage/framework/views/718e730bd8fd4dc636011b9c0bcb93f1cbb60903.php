@@ -19,7 +19,7 @@
 
             <input style="margin-left: 100px" type="text" placeholder="Enter Username" name="username" class="ktkLogin">
             <input style="margin-left: 100px"  type="password" placeholder="Enter Password" name="password" class="ktkLogin"><br>
-            <a href="" style="margin-left:180px">belum punya akun?</a>
+            <a href="registrasi" style="margin-left:180px">belum punya akun?</a>
             <button type="submit" class="myButton">Login</button>
         </div>
 
@@ -47,19 +47,12 @@
   </marquee>
 <?php endif; ?>
 
-    <!-- Preloader -->
-    
-    <!-- ##### Header Area Start ##### -->
-    
-    <!-- ##### Header Area End ##### -->
-
-    <!-- ##### Hero Area Start ##### -->
     <div class="hero-area">
         <div class="hero-slideshow owl-carousel">
 
             <!-- Single Slide -->
             <div class="single-slide bg-img">
-                <!-- Background Image-->
+
                 <div class="slide-bg-img bg-img bg-overlay" style="background-image: url(img/bg-img/1.jpg);"></div>
                 <!-- Welcome Text -->
                 <div class="container h-100">
@@ -137,15 +130,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Slide Duration Indicator -->
                 <div class="slide-du-indicator"></div>
             </div>
 
         </div>
     </div>
-    <!-- ##### Hero Area End ##### -->
 
-    <!-- ##### Features Area Start ###### -->
     <section class="features-area section-padding-100-0">
         <div class="container">
             <div class="row align-items-end">
@@ -182,9 +172,7 @@
             </div>
         </div>
     </section>
-    <!-- ##### Features Area End ###### -->
 
-    <!-- ##### Call To Action Start ###### -->
     <section class="cta-area d-flex flex-wrap">
         <!-- Cta Thumbnail -->
         <div class="cta-thumbnail bg-img jarallax" style="background-image: url(img/bg-img/5.jpg);"></div>
@@ -232,9 +220,7 @@
             <a href="#" class="btn credit-btn box-shadow btn-2">Read More</a>
         </div>
     </section>
-    <!-- ##### Call To Action End ###### -->
 
-    <!-- ##### Call To Action Start ###### -->
     <section class="cta-2-area wow fadeInUp" data-wow-delay="100ms">
         <div class="container">
             <div class="row">
@@ -252,14 +238,11 @@
             </div>
         </div>
     </section>
-    <!-- ##### Call To Action End ###### -->
 
-    <!-- ##### Services Area Start ###### -->
     <section class="services-area section-padding-100-0">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <!-- Section Heading -->
                     <div class="section-heading text-center mb-100 wow fadeInUp" data-wow-delay="100ms">
                         <div class="line"></div>
                         <p>Take look at our</p>
@@ -267,9 +250,7 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
-                <!-- Single Service Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="200ms">
                         <div class="icon">
@@ -349,9 +330,7 @@
             </div>
         </div>
     </section>
-    <!-- ##### Services Area End ###### -->
 
-    <!-- ##### Miscellaneous Area Start ###### -->
     <section class="miscellaneous-area bg-gray section-padding-100-0">
         <div class="container">
             <div class="row align-items-end justify-content-center">
@@ -429,7 +408,6 @@
                             </div>
                         </div>
 
-                        <!-- Single News Area -->
                         <div class="single-news-area d-flex align-items-center">
                             <div class="news-thumbnail">
                                 <img src="img/bg-img/11.jpg" alt="">
@@ -444,7 +422,6 @@
                             </div>
                         </div>
 
-                        <!-- Single News Area -->
                         <div class="single-news-area d-flex align-items-center">
                             <div class="news-thumbnail">
                                 <img src="img/bg-img/12.jpg" alt="">
@@ -463,27 +440,15 @@
             </div>
         </div>
     </section>
-    <!-- ##### Miscellaneous Area End ###### -->
 
-    
-    <!-- ##### Newsletter Area End ###### -->
 
-    <!-- ##### Footer Area Start ##### -->
-    
-    <!-- ##### Footer Area Start ##### -->
-
-    <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    
-    <!-- Popper js -->
     <script src="js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap js -->
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
-    <script src="js/active.js"></script>
-    
+    <script src="js/active.js"></script>    
 <?php $__env->stopSection(); ?>
 
 

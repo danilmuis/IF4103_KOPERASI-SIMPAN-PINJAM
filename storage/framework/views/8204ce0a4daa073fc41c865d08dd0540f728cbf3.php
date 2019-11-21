@@ -1,6 +1,5 @@
 <?php $__env->startSection('pojok_kanan'); ?>
-    <?php echo e(Session::get('account')); ?>
-
+<a href="<?php echo e(url('logout')); ?>"><button style="background-color: white; width: 60px"  >Logout</button></a>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('body'); ?>
 <div class="kotakPinjam">

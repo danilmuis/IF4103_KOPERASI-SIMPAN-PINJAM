@@ -13,17 +13,11 @@ class homeController extends Controller
 {
     public function index()
     {
-       // $view = View::make('welcome.blade');
-       // $view -> nest('welcome');
-       
        $data_anggota = \App\anggota::all();
        return view('welcomepage',['data' => $data_anggota]);
-        //return $view;
     }
     public function indexPengurus()
     {
-       // $view = View::make('welcome.blade');
-       // $view -> nest('welcome');
        if(!Session::get('login'))
         {
            return redirect('/')->with('alert','Silahkan Login terlebih dahulu');
@@ -35,8 +29,6 @@ class homeController extends Controller
             ->get();
             return view('homePengurus',['data' => $data_anggota]);
         }
-       
-        //return $view;
     }
     public function home()
     {
@@ -50,12 +42,8 @@ class homeController extends Controller
             ->where('akun.idAnggota',Session::get('account')->idAnggota)
             ->select('*')
             ->get();
-            //return view('homePengurus',['data' => $data_anggota]);
-        
             return view('home',['data'=>$data]);
-        }
-        
-        
+        }    
     }
     public function simpanan()
     {
@@ -85,8 +73,7 @@ class homeController extends Controller
           ->update(['debit' => $akun->debit+$data->jumlahUang]);
         $hasilupdate = \App\akun::where('idAnggota', $akun->idAnggota)->first();
         Session::put('account', $hasilupdate);
-        return redirect('home')->with('alert','transaksi sukses');
-        
+        return redirect()->action('homeController@detailx',['noTransaksi'=>$transaksi['noTransaksi']]);
         
     }
     public function pinjaman()
@@ -125,11 +112,9 @@ class homeController extends Controller
     {
         if(!Session::get('login'))
         {
-           return redirect('/')->with('alert','Silahkan Login terlebih dahulu');
-        }else{
-
-        
-        return view('transfer');
+            return redirect('/')->with('alert','Silahkan Login terlebih dahulu');
+        }else{   
+            return view('transfer');
         }
     }
     public function transfer(Request $data)
@@ -179,15 +164,12 @@ class homeController extends Controller
            'mediaPembayaran' => $data->pembayaran,
            'idAnggota' => $akun->idAnggota
         ];
-       \App\transaksi::create($transaksi);
-
+        \App\transaksi::create($transaksi);
         \App\akun::where('idAnggota', $akun->idAnggota)
           ->update(['debit' => $akun->debit-$data->jumlahUang]);
         $hasilupdate = \App\akun::where('idAnggota', $akun->idAnggota)->first();
         Session::put('account', $hasilupdate);
-        return redirect('home')->with('alert','transaksi sukses');
-        
-        
+        return redirect('home')->with('alert','transaksi sukses');        
     }
     public function pelunasan()
     {
@@ -200,7 +182,6 @@ class homeController extends Controller
     
         }
     }
-    
     public function lunas(Request $data)
     {
         $akun = Session::get('account');
@@ -218,9 +199,7 @@ class homeController extends Controller
           ->update(['kredit' => $akun->kredit-$data->jumlahUang]);
         $hasilupdate = \App\akun::where('idAnggota', $akun->idAnggota)->first();
         Session::put('account', $hasilupdate);
-        return redirect('home')->with('alert','transaksi sukses');
-        
-        
+        return redirect('home')->with('alert','transaksi sukses');   
     }
     public function registrasi()
     {
@@ -230,11 +209,8 @@ class homeController extends Controller
     {
         $uname = $data->username;
         $psw = ($data->password);
-
         $login = ['username' => $uname, 'password' =>$psw];
-        $check = \App\akun::where('username',$uname)->first();
-        
-        
+        $check = \App\akun::where('username',$uname)->first();    
         if($check){
             if(Hash::check($psw,$check->password)){
                 Session::put('account',$check);
@@ -242,8 +218,7 @@ class homeController extends Controller
                 return redirect('home');
             }else{
                 return redirect('/')->with('alert',"Username atau Password salwah");
-            }
-            
+            }            
         }else if($check = \App\pengurus::where($login)->first())
         {
             Session::put('account',$check);
@@ -253,7 +228,6 @@ class homeController extends Controller
         else{
             return redirect('/')->with('alert','Username atau Password salah');
         }
-        #return $data->belongsTo('App\akun');
     }
     public function logout()
     {
@@ -262,12 +236,6 @@ class homeController extends Controller
     }
     public function create(Request $data)
     {
-        
-        #\App\anggota::firstOrCreate($data->all());
-       # return hehehe;
-        #var_dump(request('title'));
-        #var_dump(request('publisher'));
-        #var_dump(request('releasedate'));
         $validator = Validator::make($data->all(),[
             'nik' => 'required|numeric|min:16|unique:anggota',
             'namaLengkap' => 'required|alpha',
@@ -290,7 +258,6 @@ class homeController extends Controller
             'TTL' => $data->tempat.", ".$data->tanggal,
             'agama' => $data->agama
         ];
-
         $akun =[
             'nik' => $data->nik,
             'username' => $data->username,
@@ -299,12 +266,27 @@ class homeController extends Controller
         \App\anggota::create($anggota);
         \App\akun::create($akun);
         return redirect('/')->with('regis','Registerasi telah berhasil');
-        #return $data->ttl;
-
     }
     public function new(){
         $data_anggota = \App\anggota::all();
         return view('newWelcome',['data' =>$data_anggota]);
+    }
+    public function detail($noTransaksi)
+    {
+        $data_transaksi = \App\Transaksi::where('noTransaksi','like',$noTransaksi)->first();
+        return view('detailTransaksi',['data'=>$data_transaksi]);
+    }
+    public function detailx($noTransaksi)
+    {
+        $data_transaksi = \App\Transaksi::where('noTransaksi','like',$noTransaksi)->first();
+        return view('detailTransaksi',['data'=>$data_transaksi])->with('detail','detail');
+    }
+    public function bukti($noTransaksi)
+    {
+
+    }
+    public function hasil(){
+        return view('hasilTransaksi');
     }
 
 }

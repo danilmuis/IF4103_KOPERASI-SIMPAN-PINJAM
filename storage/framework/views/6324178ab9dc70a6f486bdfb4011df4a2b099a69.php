@@ -1,5 +1,5 @@
 <?php $__env->startSection('pojok_kanan'); ?>
-  <a href="<?php echo e(url('logout')); ?>"><h3 class="fas fa-user" style="height: 40px; width: 40px; text-align: center; padding-top: 6px; color: lightblue; margin-right: 50px;border-radius: 100px; border: 4px solid lightblue"></h3></a>
+<a href="<?php echo e(url('logout')); ?>"><button style="background-color: white; width: 60px"  >Logout</button></a>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('body'); ?>
 <table class="table table-hover table-info">
@@ -15,13 +15,17 @@
   <tbody>
     
     <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $x): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <tr>
+        
+        <tr onclick="window.location='home/detail/<?php echo e($x->noTransaksi); ?>'">
+        
             <th scope="row"><?php echo e($x->noTransaksi); ?></th>
+            
             <td><?php echo e($x->jumlahUang); ?></td>
             <td><?php echo e($x->jenisTransaksi); ?></td>
             <td><?php echo e($x->waktuTransaksi); ?></td>
             
         </tr>
+        
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
   </tbody>

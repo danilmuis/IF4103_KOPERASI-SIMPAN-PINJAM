@@ -1,7 +1,7 @@
 @extends ('master')
 
 @section('pojok_kanan')
-  <a href="{{url('logout')}}"><h3 class="fas fa-user" style="height: 40px; width: 40px; text-align: center; padding-top: 6px; color: lightblue; margin-right: 50px;border-radius: 100px; border: 4px solid lightblue"></h3></a>
+<a href="{{url('logout')}}"><button style="background-color: white; width: 60px"  >Logout</button></a>
 @endsection
 @section('body')
 <table class="table table-hover table-info">
@@ -17,13 +17,17 @@
   <tbody>
     
     @foreach($data as $x)
-        <tr>
+        
+        <tr onclick="window.location='home/detail/{{$x->noTransaksi}}'">
+        
             <th scope="row">{{$x->noTransaksi}}</th>
+            
             <td>{{$x->jumlahUang}}</td>
             <td>{{$x->jenisTransaksi}}</td>
             <td>{{$x->waktuTransaksi}}</td>
             
         </tr>
+        
     @endforeach
 
   </tbody>

@@ -1,6 +1,6 @@
 @extends('master')
 @section('pojok_kanan')
-    {{Session::get('account')}}
+<a href="{{url('logout')}}"><button style="background-color: white; width: 60px"  >Logout</button></a>
 @endsection
 @section('body')
 <div class="kotakTf">
