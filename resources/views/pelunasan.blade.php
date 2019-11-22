@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master2')
 @section('pojok_kanan')
 <a href="{{url('logout')}}"><button style="background-color: white; width: 60px"  >Logout</button></a>
 @endsection
@@ -8,23 +8,7 @@
     <div id="formTarik">
     <form method="post" action="transaksi/lunas">
     {{csrf_field()}}
-                Pilih tata cara pengambilan
-                <div class="form-check">
-                    <label class="form-check-label">
-                       <input type="radio" class="form-check-input" name="pembayaran">Indomart
-                    </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                       <input type="radio" class="form-check-input" name="pembayaran">Alfamart
-                    </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                       <input type="radio" class="form-check-input" name="pembayaran">Koperasi
-                    </label>
-                </div>
-            </div>
+                           </div>
             <div class="posisi" id="formBayar">
                 Nominal uang yang akan ditarik <br>
                 Rp. <input type="text" name="jumlahUang" required id="ktk">

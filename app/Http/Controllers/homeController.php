@@ -105,8 +105,7 @@ class homeController extends Controller
           ->update(['kredit' => $data->jumlahUang]);
         $hasilupdate = \App\akun::where('idAnggota', $akun->idAnggota)->first();
         Session::put('account', $hasilupdate);
-        return redirect('home')->with('alert',"transaksi sukses");
-        
+        return redirect()->action('homeController@detailx',['noTransaksi'=>$transaksi['noTransaksi']]);
     }
     public function transferan()
     {
@@ -138,8 +137,7 @@ class homeController extends Controller
         $akun_tujuan = \App\akun::where('idAnggota',$data->tujuan)->first();
         \App\akun::where('idAnggota',$data->tujuan)
             ->update(['debit' => $akun_tujuan->debit + $data->jumlahUang]);
-        return redirect('home')->with('alert',"transaksi sukses");
-        
+        return redirect()->action('homeController@detailx',['noTransaksi'=>$transaksi['noTransaksi']]);
     }
     public function penarikan()
     {
@@ -169,7 +167,7 @@ class homeController extends Controller
           ->update(['debit' => $akun->debit-$data->jumlahUang]);
         $hasilupdate = \App\akun::where('idAnggota', $akun->idAnggota)->first();
         Session::put('account', $hasilupdate);
-        return redirect('home')->with('alert','transaksi sukses');        
+        return redirect()->action('homeController@detailx',['noTransaksi'=>$transaksi['noTransaksi']]);        
     }
     public function pelunasan()
     {
@@ -196,10 +194,12 @@ class homeController extends Controller
        \App\transaksi::create($transaksi);
 
         \App\akun::where('idAnggota', $akun->idAnggota)
-          ->update(['kredit' => $akun->kredit-$data->jumlahUang]);
+          ->update(['kredit' => $akun->kredit-$data->jumlahUang,'debit'=> $akun->debit-$data->jumlahUang]
+                    
+        );
         $hasilupdate = \App\akun::where('idAnggota', $akun->idAnggota)->first();
         Session::put('account', $hasilupdate);
-        return redirect('home')->with('alert','transaksi sukses');   
+        return redirect()->action('homeController@detailx',['noTransaksi'=>$transaksi['noTransaksi']]);
     }
     public function registrasi()
     {

@@ -1,9 +1,10 @@
-@extends ('master')
+@extends ('master2')
 
 @section('pojok_kanan')
 <a href="{{url('logout')}}"><button style="background-color: white; width: 60px"  >Logout</button></a>
 @endsection
 @section('body')
+
 <table class="table table-hover table-info">
   <thead>
     <tr>

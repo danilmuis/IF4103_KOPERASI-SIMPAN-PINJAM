@@ -11,32 +11,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="jquery-2.1.4.js"></script>
-        <script>
-        $(document).ready(function() {
-            $("#second_registrasi").hide();
-            
-            $("#next").click(function() {
-                var a = $("#reg1").val();
-                var b = $("#reg2").val();
-                var c = $("#reg3").val();
-                var d = $("#reg4").val();
-                var e = $("#reg5").val();
-                var f = $(".reg6").val();
-
-                if ((a != '') && (b != '') && (c != '') && (d != '') && (e != '') && (f != '')){
-                    $("#second_registrasi").show();
-                    $("#first_registrasi").hide();
-                    $("#next").hide()
-                }
-                else{
-                    $("#first_registrasi").show();
-                    $("#next").show();
-                }
-                    
-            })        
-        });
-        </script>
-        
 <style>
     #error{
         color:red;
@@ -117,7 +91,320 @@
     #kurs{
         padding: 50px 50px 70px 50px;
     }
-    .kotakSimpan{
+ /** NAVIGATION HOME */
+ @import url(http://pablogarciafernandez.com/css/reset.css);
+
+/* Typography
+------------------------------------- */
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+	  font-family: 'Open Sans', sans-serif;
+	  font-size: 1em;
+	  font-weight: 300;	
+	  font-style: normal;
+	  word-spacing: normal;
+	  letter-spacing: normal;
+	  text-rendering: optimizeLegibility;
+	  line-height: 1.8em;
+	  color:#717171;
+      padding:0px;
+}
+
+h1 {
+	  font-size: 2em;
+  	font-weight: 300;
+	  line-height: 4em;
+  	text-transform: uppercase;
+  	color: #BDBDBD;
+}
+h2 {
+	  font-size: 1.4em;
+  	font-weight: 400;
+	  line-height: 1em;
+}
+
+p {
+  font-size: 1.16em;
+  line-height: 4em;
+}
+
+p svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a {
+	  font-size: 1em;
+	  font-weight: 400;
+	  line-height: 100%;
+	  color: #3A53BD;
+}
+a:hover { text-decoration: none; }
+
+a[href$="http://pablogarciafernandez.com"] {
+	font-size: 1em;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #575757;
+	margin: 1.4em 0 1.4em;
+	display: inline;
+}
+
+	/* ----------- CodePen styles ----------- */
+	.codepen-style {
+		padding: 2em 0 0 0;
+
+	}
+
+		.codepen-style h1 {
+			  font-family: 'Open Sans', sans-serif;
+			  font-size:3em; 
+			  font-weight: 300;
+			  color:#000;
+			  line-height:1.8em;
+			  text-transform: none;
+		}
+
+		.codepen-style h1 span {
+			  font-style: italic;
+			  font-weight: 700;
+			  text-transform: none;
+			  color: red;
+		}
+
+		.codepen-style h2 {
+			  font-weight: 300;
+			  text-transform: none;
+		}
+
+		.codepen-style h2 a {
+		  	font-weight: 700;
+		}
+/* ----------- End CodePen styles ----------- */
+
+
+/* Structure MOBILE FIRST
+------------------------------------- */
+
+body {
+  background: #f1f1f1;
+  padding: 1em 8% 10em;
+}
+
+	/* Navigation
+	----------------- */
+	
+	.navigation {
+	  height: auto;
+		 width: 100%;
+		 display: block;
+    box-shadow: #D4D4D4 -1px 1px, #D4D4D4 -2px 2px, #D4D4D4 -3px 3px, #D4D4D4 -4px 4px, #D4D4D4 -5px 5px, #D4D4D4 -6px 6px;
+    transform: translate3d(4px, 0px, 0);
+    background-color: #D4D4D4;
+ 
+	}
+
+	.navigation li { width: 100%; }
+
+	.navigation a {
+		  display: block;
+		  padding: 0.5em 0 0.5em 1em;
+		  margin: 0;
+		  line-height: 2em;
+		  font-weight: 400;
+		  color: #333;
+		  text-transform: uppercase;
+	}
+	.navigation a:hover {
+		  background-color: #666;
+		  color: #333;
+     box-shadow: -1px 1px, -2px 2px, -3px 3px, -4px 4px;
+      transform: translate3d(4px, -4px, 0);
+      transition: .15s;
+	}
+
+.navigation a > span:after {
+  content: " /";
+  padding-left: 0.2em;
+}
+
+	.navigation li:nth-child(1) a { background-color: #00FF96 ; }
+	.navigation li:nth-child(2) a { background-color: #FF6524 ; }
+	.navigation li:nth-child(3) a { background-color: #FFA300 ; }
+	.navigation li:nth-child(4) a { background-color: #FFCD00 ; }
+	.navigation li:nth-child(5) a { background-color: #F2F600 ; }
+
+	.navigation li:nth-child(1) a:hover,
+	.navigation li:nth-child(2) a:hover,
+	.navigation li:nth-child(3) a:hover,
+	.navigation li:nth-child(4) a:hover,
+	.navigation li:nth-child(5) a:hover { background-color: #666; }
+
+	.navigation svg {
+		  width: 30px;
+		  height: 1.5em;
+		  vertical-align: text-top;
+	}
+	svg {
+		  opacity:1;
+		  fill-opacity:1;
+		  fill-rule:nonzero;
+		  vertical-align: top;
+		  fill: #333;
+	}
+
+	.navigation a:hover svg { fill: #333; }
+
+	.navigation span{
+		  display: inline-block;
+		  padding-left: 0.5em;
+	}
+
+	/* END Navigation 
+	----------------- */
+
+
+/* Structure DESKTOP
+------------------------------------- */
+@media only screen and (min-width: 1024px) {
+
+	body { padding: 2em 0 0 4em; }
+
+	header, article, section, footer {
+	  margin: 0 auto;
+	  
+	  width: auto;
+	  display: block;
+	}
+
+	header { padding-top: 0; }
+
+	/* Navigation
+	----------------- */
+
+	.navigation {
+	    transition-delay: 0s;
+	    transition-duration: 0.4s;
+	    transition-property: all;
+	    transition-timing-function: line;
+    
+    box-shadow: 0 0;
+    transform: translate3d(0px, 0px, 0);
+	}
+
+	.navigation a:hover {
+	    transition-delay: 0s;
+	    transition-duration: 0.2s;
+	    transition-property: all;
+	    transition-timing-function: line;
+    
+    box-shadow: #303030 -1px 1px, #333 -2px 2px, #2E2E2E -3px 3px, #2B2B2B -4px 4px, #292929 -5px 5px, #262626 -6px 6px;
+    transform: translate3d(6px, 0px, 0);
+	}
+
+	.navigation {
+		  position: fixed;
+	  	left: 0;
+		  top: 0;
+		  bottom: 0;
+		  height: 100%;
+		  width: 4em;
+		  background-color: #333;
+	}
+	.navigation:hover {
+		  position: fixed;
+	  width: 10em;
+	}
+
+	.navigation ul { display: block; }
+
+	.navigation li { display: block; }
+
+	.navigation a {
+		  padding: 0.8em 0.6em 0.8em 1em;
+		  color: #F1F1F1;
+		  border-bottom: 1px solid transparent;
+		  border-top: 1px solid transparent;
+	}
+
+	.navigation li:nth-child(1) a,
+	.navigation li:nth-child(2) a,
+	.navigation li:nth-child(3) a,
+	.navigation li:nth-child(4) a,
+	.navigation li:nth-child(5) a { background-color: transparent; }
+	.navigation a:hover {
+		  display: inline-block;
+		  padding: 0 0 0 1em;
+		  margin: 0;
+		  line-height: 2em;
+		  font-weight: 400;
+	  	width: 6em; 
+	}
+
+	.navigation:hover a {
+		  display: inline-block;
+		  width: 9em;
+		  padding: 0.8em 0 0.8em 1em;
+	}
+	.navigation span { text-indent: -200px; }
+
+  .navigation:hover span {
+		  display: inline-block;
+		  text-indent: 0;
+	}
+	.active { background-color: #F1F1F1; }
+  
+.navigation a > span:after { color: #666; }
+.navigation a:hover > span:after { color: #333; }
+
+	.navigation svg {
+		  width: 30px;
+		  height: 2em;
+		  vertical-align: top;
+	}
+
+	.navigation svg:hover { fill: #333; }
+
+	.home { fill: #00FF96; }
+	.about { fill: #FF6524; }
+	.work { fill: #FFA300; }
+	.lab { fill: #FFCD00; }
+	.contact { fill: #F2F600; }
+
+	/* Menu position on the navigation bar */
+	.menu {
+		  left: 0;
+		  position: fixed;
+          padding-left:0;
+		  height: auto;
+		  width: auto;
+	}
+	.menu { top: 0; }
+	/* END Menu position on the navigation bar */
+	
+
+	/* ----------------- 
+		End Navigation */
+
+}
+
+ /* Structure DESKTOP when is 1920px height or more
+------------------------------------- */
+@media only screen and (min-height: 1920px){
+	.navigation:hover { width: 8.592em; }
+	.navigation a {
+		  font-size: 0.9em;
+		  padding: 0.8em 0.8259em 0.8em 1em;
+	}
+
+}
+/**END NEW NAVIGATION */
+
+.kotakSimpan{
         border-width: 10px;
         margin:20px 20px 20px 20px;
         margin:auto;
@@ -127,69 +414,6 @@
         justify-content: center;
     }
     
-    
-    #formLogin{
-        margin: 30px 30px 30px 30px;
-    }
-    #formLogin .ktkLogin{
-        width: 300px;
-        border: none;
-        border-bottom: 1px solid lightblue
-    }
-    #formLogin #tmbllogin{
-        width: 100px;
-        height: 30px;
-        border: none;
-        float: right;
-        background-color: lightblue;
-        border-radius: 7px;
-        border-radius: 5px;
-        font-family: sans-serif;
-    }
-
-    #first_registrasi{
-        margin: 30px 30px 30px 480px;4
-        
-    }
-    #porm{
-        position: absolute;
-        top: 500px;
-        right: 100px
-    }
-    #second_registrasi{
-        margin: 30px 30px 30px 600px;
-    }
-    #first_registrasi #dalam{
-        margin: 30px 30px 30px 30px;
-    }
-    #first_registrasi .ktkRegis{
-        width: 50%;
-        border: none;
-        border-bottom: 1px solid lightblue
-    }
-    #next{
-        margin: 30px 30px 30px 230px;
-        width: 100px;
-        height: 30px;
-        border: none;
-        background-color: lightblue;
-        border-radius: 7px;
-        border-radius: 5px;
-        font-family: sans-serif;
-    }
-    #second_registrasi #reg{
-        width: 100px;
-        height: 30px;
-        border: none;
-        background-color: lightblue;
-        border-radius: 7px;
-        border-radius: 5px;
-        font-family: sans-serif;
-    }
-    #next:hover, #reg:hover{
-        text-decoration-style: solid
-    }
-
     #formSimpan{
         margin: 30px 30px 30px 30px;
     }
@@ -320,78 +544,7 @@
         height:200px;
         border-radius: 50%;
     }
-    .modal {
-        display:none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.4);
-    }
-    .modal-content {
-        background-color: #fefefe;
-        margin: 4% auto 15% auto;
-        border: 1px solid #888;
-        width: 40%;
-        padding-bottom: 30px;
-    }
-    .close {
-        position: absolute;
-        right: 25px;
-        top: 0;
-        color: #000;
-        font-size: 35px;
-        font-weight: bold;
-    }
-    .close:hover,.close:focus {
-        color: red;
-        cursor: pointer;
-    }
-    .animate {
-        animation: zoom 0.6s
-    }
-    @keyframes zoom {
-        from {transform: scale(0)}
-        to {transform: scale(1)}
-    }
-    input[type=text], input[type=password] {
-        width: 30%;
-        padding: 12px 20px;
-        margin: 8px 26px;
-        display: inline-block;
-        border: none;
-        border-bottom:3px solid #29668f; 
-        font-size:16px;
-    }
-    .myButton {
-        box-shadow: 0px 10px 14px -7px #276873;
-        background:linear-gradient(to bottom, #00b7fa 5%, #00c5e3 100%);
-        background-color:#00b7fa;
-        border-radius:42px;
-        border:6px solid #29668f;
-        display:inline-block;
-        cursor:pointer;
-        color:#f5f5f5;
-        font-family:Arial;
-        font-size:21px;
-        font-weight:bold;
-        padding:10px 20px;
-        margin: 8px 200px;
-        text-decoration:none;
-        text-shadow:0px 1px 0px #3d768a;
-    }
-    .myButton:hover {
-        background:linear-gradient(to bottom, #00c5e3 5%, #00b7fa 100%);
-        background-color:#00c5e3;
-    }
-    .myButton:active {
-        position:relative;
-        top:1px;
-        
-    }
+    
     .bukti{
         border-width: 10px;
         margin:20px 20px 20px 20px;
@@ -419,16 +572,9 @@
         text-overflow: ellipsis;
         color:black;
     }
-/* This is
-a multi-line
-comment */
 </style>
 </head>
-<body>
-
-@if(session('login'))
-  {{Session::get('account')}}   
-@endif
+<body style="padding-top:0px;">
 @if(session('alert'))
     <script>
       alert('{{session('alert')}}');
@@ -478,8 +624,20 @@ comment */
                       </li>
                     </ul>
                   </nav>
+                  <nav class="navigation">
+
+<ul class="menu"><br><br><br><li><a class="active" href="#"><img src="{{url('assets/username.png')}}" width="30px" height="30px"><span title="Username">{{Session::get('account')->username}}</span></a></li>
+    <li><a href="#"><img src="{{url('assets/id.png')}}" width="30px" height="30px"><span title="ID Anggota">{{Session::get('account')->idAnggota}}</span></a></li>
+    <li><a href="#"><img src="{{url('assets/balance.png')}}" width="30px" height="30px"><span title="Debit">Rp. {{Session::get('account')->debit}}</span></a></li>
+    <li><a href="#"><img src="{{url('assets/debt.png')}}" width="30px" height="30px"><span title="Kredit">Rp. {{Session::get('account')->kredit}}</span></a></li>
+    
+</nav>
+
                 </header>
- 
+                @if(session('login'))
+  {{Session::get('account')}}   
+@endif
+
 	<!-- bagian konten blog -->
 	@yield('body')
  

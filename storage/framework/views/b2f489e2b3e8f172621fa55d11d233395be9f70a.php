@@ -419,8 +419,6 @@
         text-overflow: ellipsis;
         color:black;
     }
-
-      
 /* This is
 a multi-line
 comment */

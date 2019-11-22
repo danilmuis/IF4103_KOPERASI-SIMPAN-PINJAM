@@ -2,6 +2,7 @@
 <a href="<?php echo e(url('logout')); ?>"><button style="background-color: white; width: 60px"  >Logout</button></a>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('body'); ?>
+
 <table class="table table-hover table-info">
   <thead>
     <tr>
@@ -86,4 +87,4 @@
 <?php $__env->stopSection(); ?>
 
 
-<?php echo $__env->make('master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\xampp\htdocs\IF4103_KOPERASI-SIMPAN-PINJAM\resources\views/home.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('master2', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\xampp\htdocs\IF4103_KOPERASI-SIMPAN-PINJAM\resources\views/home.blade.php ENDPATH**/ ?>

@@ -9,89 +9,321 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <style>
-    .nav1{
-        background-color: navy
-    }
-    .nav2{
-        background-color: lightblue
-    }
-    #ld button{
-        border-radius: 3px;
-        border: none;
-    }
-    .carousel-inner img {
-        width: 100%;
-        height: 100%;
-    }
-    #demo{
-        width: 600px;
-        margin: auto;
-        position: fix;
-        top: 0; left: 0; bottom: 0; right: 0;
-        margin-top: 30px
-    }
-    .navbar-brand{
-        font-size: 40px;
-        
-    }
-    #bawah{
-        height: 40px;
-    }
-    .navbar{
-        padding-left: 100px
-    }
-    .dropdown-menu{
-        background-color: lightblue;
-        text-decoration: none
-    }
-    .ha li{
-        padding-left: 50px;
-        text-decoration: none;
-        color: navy;
-    }
-    .ha li a{
-        color: navy;
-    }
-    .ha li a:active{
-        color: yellow;
-    }
-    .col-3{
-        padding-left: 350px
-    }
-    .kotak{
-        margin-top: 5px;
-        margin-bottom: 5px;
-        padding-top:5px;
-        padding-bottom: 5px;
-        background-color: white;
-        width: 100%;
-    }
-    .kurs{
-        background-color: white;
-        display: inline-block;
-        margin-left: 100px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        border-radius: 10px;
-        border: 2px solid lightblue;
-        font-size: 20px;
-        color: navy;
-        font-family: garamond;
-        align-items: center;
-    }
-    #kurs{
-        padding: 50px 50px 70px 50px;
-    }
-    .foot{
-        width 100px;
-        display: inline-block;
-        padding-top: 50px;
-        padding-bottom: 30px;
-        font-size: 14px;
-        color: white;
-        font-family: sans-serif;
-        align-items: center;
-    }
+    /*	
+	Side Navigation Menu V2, RWD
+	===================
+	Author: @PableraShow
+
+ */
+
+@import url(http://pablogarciafernandez.com/css/reset.css);
+
+/* Typography
+------------------------------------- */
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+	  font-family: 'Open Sans', sans-serif;
+	  font-size: 1em;
+	  font-weight: 300;	
+	  font-style: normal;
+	  word-spacing: normal;
+	  letter-spacing: normal;
+	  text-rendering: optimizeLegibility;
+	  line-height: 1.8em;
+	  color:#717171;
+}
+
+h1 {
+	  font-size: 2em;
+  	font-weight: 300;
+	  line-height: 4em;
+  	text-transform: uppercase;
+  	color: #BDBDBD;
+}
+h2 {
+	  font-size: 1.4em;
+  	font-weight: 400;
+	  line-height: 1em;
+}
+
+p {
+  font-size: 1.16em;
+  line-height: 4em;
+}
+
+p svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a {
+	  font-size: 1em;
+	  font-weight: 400;
+	  line-height: 100%;
+	  color: #3A53BD;
+}
+a:hover { text-decoration: none; }
+
+a[href$="http://pablogarciafernandez.com"] {
+	font-size: 1em;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #575757;
+	margin: 1.4em 0 1.4em;
+	display: inline;
+}
+
+	/* ----------- CodePen styles ----------- */
+	.codepen-style {
+		padding: 2em 0 0 0;
+
+	}
+
+		.codepen-style h1 {
+			  font-family: 'Open Sans', sans-serif;
+			  font-size:3em; 
+			  font-weight: 300;
+			  color:#000;
+			  line-height:1.8em;
+			  text-transform: none;
+		}
+
+		.codepen-style h1 span {
+			  font-style: italic;
+			  font-weight: 700;
+			  text-transform: none;
+			  color: red;
+		}
+
+		.codepen-style h2 {
+			  font-weight: 300;
+			  text-transform: none;
+		}
+
+		.codepen-style h2 a {
+		  	font-weight: 700;
+		}
+/* ----------- End CodePen styles ----------- */
+
+
+/* Structure MOBILE FIRST
+------------------------------------- */
+
+body {
+  background: #f1f1f1;
+  padding: 1em 8% 10em;
+}
+
+	/* Navigation
+	----------------- */
+	
+	.navigation {
+	  height: auto;
+		 width: 100%;
+		 display: block;
+    box-shadow: #D4D4D4 -1px 1px, #D4D4D4 -2px 2px, #D4D4D4 -3px 3px, #D4D4D4 -4px 4px, #D4D4D4 -5px 5px, #D4D4D4 -6px 6px;
+    transform: translate3d(4px, 0px, 0);
+    background-color: #D4D4D4;
+ 
+	}
+
+	.navigation li { width: 100%; }
+
+	.navigation a {
+		  display: block;
+		  padding: 0.5em 0 0.5em 1em;
+		  margin: 0;
+		  line-height: 2em;
+		  font-weight: 400;
+		  color: #333;
+		  text-transform: uppercase;
+	}
+	.navigation a:hover {
+		  background-color: #666;
+		  color: #333;
+     box-shadow: -1px 1px, -2px 2px, -3px 3px, -4px 4px;
+      transform: translate3d(4px, -4px, 0);
+      transition: .15s;
+	}
+
+.navigation a > span:after {
+  content: " /";
+  padding-left: 0.2em;
+}
+
+	.navigation li:nth-child(1) a { background-color: #00FF96 ; }
+	.navigation li:nth-child(2) a { background-color: #FF6524 ; }
+	.navigation li:nth-child(3) a { background-color: #FFA300 ; }
+	.navigation li:nth-child(4) a { background-color: #FFCD00 ; }
+	.navigation li:nth-child(5) a { background-color: #F2F600 ; }
+
+	.navigation li:nth-child(1) a:hover,
+	.navigation li:nth-child(2) a:hover,
+	.navigation li:nth-child(3) a:hover,
+	.navigation li:nth-child(4) a:hover,
+	.navigation li:nth-child(5) a:hover { background-color: #666; }
+
+	.navigation svg {
+		  width: 30px;
+		  height: 1.5em;
+		  vertical-align: text-top;
+	}
+	svg {
+		  opacity:1;
+		  fill-opacity:1;
+		  fill-rule:nonzero;
+		  vertical-align: top;
+		  fill: #333;
+	}
+
+	.navigation a:hover svg { fill: #333; }
+
+	.navigation span{
+		  display: inline-block;
+		  padding-left: 0.5em;
+	}
+
+	/* END Navigation 
+	----------------- */
+
+
+/* Structure DESKTOP
+------------------------------------- */
+@media only screen and (min-width: 1024px) {
+
+	body { padding: 2em 0 0 4em; }
+
+	header, article, section, footer {
+	  margin: 0 auto;
+	  max-width: 670px;
+	  width: auto;
+	  display: block;
+	}
+
+	header { padding-top: 0; }
+
+	/* Navigation
+	----------------- */
+
+	.navigation {
+	    transition-delay: 0s;
+	    transition-duration: 0.4s;
+	    transition-property: all;
+	    transition-timing-function: line;
+    
+    box-shadow: 0 0;
+    transform: translate3d(0px, 0px, 0);
+	}
+
+	.navigation a:hover {
+	    transition-delay: 0s;
+	    transition-duration: 0.2s;
+	    transition-property: all;
+	    transition-timing-function: line;
+    
+    box-shadow: #303030 -1px 1px, #333 -2px 2px, #2E2E2E -3px 3px, #2B2B2B -4px 4px, #292929 -5px 5px, #262626 -6px 6px;
+    transform: translate3d(6px, 0px, 0);
+	}
+
+	.navigation {
+		  position: fixed;
+	  	left: 0;
+		  top: 0;
+		  bottom: 0;
+		  height: 100%;
+		  width: 4em;
+		  background-color: #333;
+	}
+	.navigation:hover {
+		  position: fixed;
+	  width: 10em;
+	}
+
+	.navigation ul { display: block; }
+
+	.navigation li { display: block; }
+
+	.navigation a {
+		  padding: 0.8em 0.6em 0.8em 1em;
+		  color: #F1F1F1;
+		  border-bottom: 1px solid transparent;
+		  border-top: 1px solid transparent;
+	}
+
+	.navigation li:nth-child(1) a,
+	.navigation li:nth-child(2) a,
+	.navigation li:nth-child(3) a,
+	.navigation li:nth-child(4) a,
+	.navigation li:nth-child(5) a { background-color: transparent; }
+	.navigation a:hover {
+		  display: inline-block;
+		  padding: 0 0 0 1em;
+		  margin: 0;
+		  line-height: 2em;
+		  font-weight: 400;
+	  	width: 6em; 
+	}
+
+	.navigation:hover a {
+		  display: inline-block;
+		  width: 9em;
+		  padding: 0.8em 0 0.8em 1em;
+	}
+	.navigation span { text-indent: -200px; }
+
+  .navigation:hover span {
+		  display: inline-block;
+		  text-indent: 0;
+	}
+	.active { background-color: #F1F1F1; }
+  
+.navigation a > span:after { color: #666; }
+.navigation a:hover > span:after { color: #333; }
+
+	.navigation svg {
+		  width: 30px;
+		  height: 2em;
+		  vertical-align: top;
+	}
+
+	.navigation svg:hover { fill: #333; }
+
+	.home { fill: #00FF96; }
+	.about { fill: #FF6524; }
+	.work { fill: #FFA300; }
+	.lab { fill: #FFCD00; }
+	.contact { fill: #F2F600; }
+
+	/* Menu position on the navigation bar */
+	.menu {
+		  left: 0;
+		  position: fixed;
+		  height: auto;
+		  width: auto;
+	}
+	.menu { top: 0; }
+	/* END Menu position on the navigation bar */
+	
+
+	/* ----------------- 
+		End Navigation */
+
+}
+
+ /* Structure DESKTOP when is 1920px height or more
+------------------------------------- */
+@media only screen and (min-height: 1920px){
+	.navigation:hover { width: 8.592em; }
+	.navigation a {
+		  font-size: 0.9em;
+		  padding: 0.8em 0.8259em 0.8em 1em;
+	}
+
+}
 /* This is
 a multi-line
 comment */
@@ -99,135 +331,20 @@ comment */
 </head>
 <body>
     <header>
-              <nav class="navbar navbar-dark sticky-top nav1">
-                <a class="navbar-brand" href="#"><img id="logo" src="logo1.png" style="height: 50px" alt=""></a>
-                <div id="ld" style="float:right">
-                    <button style="background-color: white; width: 60px">Login</button>
-                    <button style="background-color: navy; border: 1px solid white; color: white; width: 60px">Daftar</button>
-                </div>
-              </nav>
-              <nav id="bawah" class="bawah navbar navbar-expand-sm nav2 justify-content-end" style="padding-right:100px">
-                    <ul class="navbar-nav ha">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item dropright">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                Transaksi
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Simpan</a>
-                                <a class="dropdown-item" href="#">Pinjam</a>
-                                <a class="dropdown-item" href="#">Transfer</a>
-                                <a class="dropdown-item" href="#">Penarikan</a>
-                                <a class="dropdown-item" href="#">Bayar Pinjaman</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#us">About Us</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#kontak" style="">Contact Us</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </header>
-              
-                  <div id="demo" class="carousel slide" data-ride="carousel">
-                        <ul class="carousel-indicators">
-                          <li data-target="#demo" data-slide-to="0" class="active"></li>
-                          <li data-target="#demo" data-slide-to="1"></li>
-                          <li data-target="#demo" data-slide-to="2"></li>
-                        </ul>
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="a.jpg" alt="Los Angeles" width="1100" height="500">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="b.jpg" alt="Chicago" width="1100" height="500">  
-                          </div>
-                          <div class="carousel-item">
-                            <img src="a.jpg" alt="New York" width="1100" height="500">   
-                          </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                          <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#demo" data-slide="next">
-                          <span class="carousel-control-next-icon"></span>
-                        </a>
-                      </div>
-                      <div class="container-fluid" style="background-color: navy;margin-top: 30px; margin-bottom: 100px">
-                        <div id="kurs">
-                            <div style="width:200px; margin-left: 50px" class="kurs">
-                                <center style="padding-bottom: 20px">USD *</center>
-                                <center style="padding-bottom: 20px">1.00</center>
-                                <center>14,211.00</center>
-                            </div>
-                            <div style="width:200px" class="kurs">
-                                <center style="padding-bottom: 20px">EUR *</center>
-                                <center style="padding-bottom: 20px">1.00</center>
-                                <center>15,681.84</center>
-                            </div>
-                            <div style="width:200px" class="kurs">
-                                <center style="padding-bottom: 20px">CNY *</center>
-                                <center style="padding-bottom: 20px">1.00</center>
-                                <center>2,005.65</center>
-                            </div>
-                            <div class="kurs ket" style="height:200px;width: 200px;border:none;background:none;color:lightblue; overflow:block ">
-                                Berikut adalah KURS beberapa Mata Uang saat ini <br>
-                                <p style="font-size: 13px">* Sewaktu-waktu dapat berubah</p>
-                            </div>
-                        </div> 
-                        <div style="background-color: lightblue; width: 100%; height: 20px; border: 2px solid white; border-bottom: none">
+        <nav class="navigation">
 
-                        </div>   
-                        
-                      </div>
-                <footer>
-                    <div class="container-fluid" style="background-color: navy">
-                        <div style="background-color: lightblue; width: 100%; height: 20px; border: 2px solid white; border-top: none">
-
-                        </div> 
-                        <div class="row">
-                            
-                            <div class="col-2">
-                                <div class="foot" style="width: 400px; padding-left: 30px" id="us">
-                                        <h1>About Us</h1>
-                                        <p>Koperasi Simpan Pinjam merupakan badan usaha yang dimiliki oleh anggota dan dikelola oleh anggotanya sendiri.<br>
-                                        Kami memiliki sebuah web yang dapat digunakan untuk mempermudah alur transaksi. Namun, anggota koperasi <br>
-                                        tetap harus datang langsung ke koperasi untuk melakukan konfirmasi pada transaksi yang dilakukan.</p>
-                                        <br>
-                                </div>
-                            </div>
-                            <div class="col-2">
-
-                            </div>
-                            <div class="col-2">
-                                <div class="foot" id="kontak">
-                                    <H6 style="font-size: 20px; width: 300px">Kantor Pusat</H3>
-                                    <p>Jl. blablablablablablablablablablablabla</p>
-                                
-                                    <h6 style="font-size: 20px; width: 300px">Hubungi Kami</h6>
-                                    Telp: 14045, +62-21-5XXXXXXX <br>
-                                    Fax: +62-21-5XXXXXXX <br>
-                                    Email: ksppeduli@koperasisimpanpinjam.co.id <br>
-                                </div>
-                            </div>
-                            <div class="col-1">
-
-                            </div>
-                            <div class="col-4">
-                                <div class="foot" style="float: right">
-                                    <img id="logo" src="logo1.png" style="height: 40px" alt="">
-                                    <br><u><p style="font-family: sans-serif; font-size: 10px; color: lightblue">Membantu Rakyat Menghadapi Realita</p></u> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-fluid" style="background-color: lightblue; padding-top:10px; padding-bottom: 20px">
-                        <center>© 2019 Koperasi Simpan Pinjam</center>
-                    </div>
-                </footer>
+            <ul class="menu"><li><a class="active" href="#"><svg class="home" width="30px" height="30px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path d="M419.492,275.815v166.213H300.725v-90.33h-89.451v90.33H92.507V275.815H50L256,69.972l206,205.844H419.492 z M394.072,88.472h-47.917v38.311l47.917,48.023V88.472z"/></svg><span title="Home">NO AKUN</span></a></li>
+                <li><a href="#"><svg class="about" width="30px" height="30px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path d="M407.448,360.474c-59.036-13.617-113.989-25.541-87.375-75.717 c81.01-152.729,21.473-234.406-64.072-234.406c-87.231,0-145.303,84.812-64.072,234.406c27.412,50.482-29.608,62.393-87.375,75.717 c-59.012,13.609-54.473,44.723-54.473,101.176h411.838C461.919,405.196,466.458,374.083,407.448,360.474z"/></svg><span title="About">About</span></a></li>
+                <li><a href="#"><svg class="work" width="30px" height="30px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path d="M201.875,141.084h-30v-30.563c0-11.747,9.523-21.271,21.271-21.271h125.709 c11.747,0,21.271,9.523,21.271,21.271v30.563h-30v-17.063c0-3.739-3.031-6.771-6.771-6.771h-94.709 c-3.739,0-6.771,3.031-6.771,6.771V141.084z M462,161.084V422.75H50V161.084H462z M347.818,228.582l-4.721-10.858 c-44.045,27.402-67.739,48.047-103.599,88.742c-19.074-13.598-29.838-19.846-46.809-28.057l-14.509,13.412 c29.016,26.895,44.784,44.631,68.409,72.456C284.896,295.584,311.497,260.279,347.818,228.582z"/></svg><span title="Work">Work</span></a></li>
+                <li><a href="#"><svg class="lab" width="30px" height="30px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path d="M225.741,122.262c-10.096-4.89-19.027-8.84-27.496-12.287C211.636,74.43,230.974,51,256.001,51 c24.381,0,43.363,22.232,56.707,56.239c-8.562,3.61-17.355,7.632-27.344,12.62C275.138,93.088,263.472,81,256.001,81 C248.31,81,236.177,93.811,225.741,122.262z M256.001,431c-7.471,0-19.135-12.088-29.361-38.86 c-10.084,5.036-18.803,9.016-27.346,12.621C212.64,438.767,231.62,461,256.001,461c25.029,0,44.365-23.43,57.758-58.974 c-8.439-3.436-17.34-7.367-27.496-12.288C275.827,418.19,263.692,431,256.001,431z M174.112,393.154 c-33.35,12.045-83.111,23.78-102.887-5.42c-9.77-14.427-13.416-42.163,24.695-92.376c10.111-13.322,21.816-26.408,33.689-38.419 c26.635-26.545,56.641-52.096,95.738-78.552c-18.822-10.192-39.367-19.936-59.412-27.187c-20.52-7.424-38.586-11.535-52.428-11.535 c-8.842,0-15.404,1.843-17.553,4.93c-2.285,3.281-2.398,13.373,7.744,31.476c1.201-0.132,2.418-0.206,3.652-0.206 c18.225,0,33,14.775,33,33c0,18.227-14.775,33-33,33s-33-14.773-33-33c0-5.902,1.559-11.439,4.273-16.233 c-19.311-33.481-15.328-53.631-7.291-65.177c5.648-8.115,17.551-17.789,42.174-17.789c43.723,0,102.635,28.356,140.564,50.322 c38.51-23.28,99.422-53.988,144.42-53.988c24.723,0,36.639,9.932,42.281,18.264c9.77,14.428,13.416,42.164-24.693,92.377 C362.44,287.316,255.792,363.653,174.112,393.154z M392.185,198.504c26.182-34.497,26.984-52.643,23.75-57.418 c-2.189-3.232-8.545-5.086-17.441-5.086c-33.951,0-85.664,24.93-115.436,41.803c21.982,14.287,42.518,29.346,61.24,44.701 c-7.084,7.058-14.51,13.981-22.102,20.68c-20.783-16.807-43.885-33.264-67.832-48.011c-27.5,17.708-55.186,38.509-80.055,60.672 c18.705,16.243,40.973,33.296,64.725,49.076c-9.086,5.654-18.26,11.073-28.729,16.744c-0.004-0.003-0.006-0.005-0.01-0.007 c-0.078-0.055-0.154-0.109-0.232-0.164c-19.885-13.853-39.51-29.054-57.662-44.965c-49.02,49.168-62.828,84.795-56.336,94.383 c2.189,3.233,8.549,5.088,17.443,5.088c40.871,0,105.748-34.459,144.129-59.173C304.759,286.485,358.495,242.895,392.185,198.504z M433.524,319.63c2.441-4.605,3.83-9.855,3.83-15.432c0-18.225-14.775-33-33-33s-33,14.775-33,33c0,18.227,14.775,33,33,33 c1.521,0,3.016-0.112,4.48-0.312c9.611,17.505,9.453,27.295,7.209,30.519c-2.148,3.086-8.709,4.929-17.551,4.929 c-27.856,0-66.664-16.141-91.65-28.324c-8.357,5.839-18.73,12.77-28.846,19.122c33.494,17.717,82.752,39.202,120.496,39.202 c24.621,0,36.523-9.674,42.172-17.788C448.683,373.03,452.663,352.955,433.524,319.63z"/></svg><span title="Lab">Lab</span></a></li>
+                <li><a href="#"><svg class="contact" width="30px" height="30px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path d="M170.544,239.052L50,146.454v213.142L170.544,239.052z M460.928,103.407H51.416l204.593,157.162L460.928,103.407z M313.355,260.696l-57.364,43.994l-57.454-44.135L50.5,408.593h410.751L313.355,260.696z M341.367,239.212L462,359.845V146.693L341.367,239.212z"/></svg><span title="Contact">Contact</span></a></li></ul>
+    
+        </nav>
+    
+        <section class="codepen-style">
+            <h1>Side navigation menu <span>V2</span></h1>
+          <h2>Responsive Web Design</h2>
+            <p>Created with <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path id="favorite-6-icon" d="M256,462L53.676,284.644V130.646L169.034,50L256,104.977L342.965,50l115.359,80.646v153.998L256,462z M93.801,266.457L256,408.64l162.198-142.183V151.553l-76.35-53.375L256,152.447l-85.849-54.27l-76.351,53.375V266.457z"/></svg> by <a href="http://pablogarciafernandez.com" target="_blank">Pablo García Fernández</a></p>
+        </section>
 </body>
 </html>
