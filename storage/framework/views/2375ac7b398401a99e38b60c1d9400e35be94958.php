@@ -8,6 +8,10 @@
         </ul>
     </div>
 <?php endif; ?>
+<?php if(session('alert')): ?>
+    <?php echo e(session('alert')); ?>
+
+<?php endif; ?>
 <form method="POST" action="<?php echo e(url('registrasi/create')); ?>">
     <?php echo e(csrf_field()); ?>
 

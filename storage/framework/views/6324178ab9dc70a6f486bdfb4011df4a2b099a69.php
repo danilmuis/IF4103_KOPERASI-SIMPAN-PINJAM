@@ -27,10 +27,10 @@
             <td style="color:red;">-Rp. <?php echo e($x->jumlahUang); ?></td>
             <?php endif; ?>
             <?php if($x->jenisTransaksi=="Pinjaman"): ?>
-            <td style="color:purple;">Rp. <?php echo e($x->jumlahUang); ?></td>
+            <td style="color:orange;">+Rp. <?php echo e($x->jumlahUang); ?></td>
             <?php endif; ?>
             <?php if($x->jenisTransaksi=="Pelunasan"): ?>
-            <td style="color:orange;">Rp. <?php echo e($x->jumlahUang); ?></td>
+            <td style="color:orange;">-Rp. <?php echo e($x->jumlahUang); ?></td>
             <?php endif; ?>
             <?php if(isset($x->idTujuan) && $x->idTujuan!=Session::get('account')->idAnggota): ?>
             <td style="color:red;">-Rp. <?php echo e($x->jumlahUang); ?></td>

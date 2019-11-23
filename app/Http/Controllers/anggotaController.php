@@ -41,6 +41,10 @@ class anggotaController extends Controller
             'psw' => 'required|alpha_num|min:4|max:10',
             'tempat' => 'required|alpha'
         ]);
+        if ($data->psw != $data->psw2){
+            return redirect('registrasi')
+                ->with('alert','Password dengan Re-Enter Password harus sama');
+        }
         if($validator ->fails())
         {
             return redirect('registrasi')

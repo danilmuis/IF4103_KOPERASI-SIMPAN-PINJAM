@@ -11,6 +11,9 @@
         </ul>
     </div>
 @endif
+@if(session('alert'))
+    {{session('alert')}}
+@endif
 <form method="POST" action="{{url('registrasi/create')}}">
     {{csrf_field()}}
         <div id="first_registrasi">

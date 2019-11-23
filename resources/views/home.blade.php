@@ -29,10 +29,10 @@
             <td style="color:red;">-Rp. {{$x->jumlahUang}}</td>
             @endif
             @if($x->jenisTransaksi=="Pinjaman")
-            <td style="color:purple;">Rp. {{$x->jumlahUang}}</td>
+            <td style="color:orange;">+Rp. {{$x->jumlahUang}}</td>
             @endif
             @if($x->jenisTransaksi=="Pelunasan")
-            <td style="color:orange;">Rp. {{$x->jumlahUang}}</td>
+            <td style="color:orange;">-Rp. {{$x->jumlahUang}}</td>
             @endif
             @if(isset($x->idTujuan) && $x->idTujuan!=Session::get('account')->idAnggota)
             <td style="color:red;">-Rp. {{$x->jumlahUang}}</td>
