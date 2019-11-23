@@ -22,11 +22,24 @@
         <tr onclick="window.location='home/detail/{{$x->noTransaksi}}'">
         
             <th scope="row">{{$x->noTransaksi}}</th>
-            
-            <td>{{$x->jumlahUang}}</td>
+            @if($x->jenisTransaksi=="Simpanan" || $x->idTujuan==Session::get('account')->idAnggota)
+            <td style="color:green;">+Rp. {{$x->jumlahUang}}</td>
+            @endif
+            @if($x->jenisTransaksi=="Penarikan")
+            <td style="color:red;">-Rp. {{$x->jumlahUang}}</td>
+            @endif
+            @if($x->jenisTransaksi=="Pinjaman")
+            <td style="color:purple;">Rp. {{$x->jumlahUang}}</td>
+            @endif
+            @if($x->jenisTransaksi=="Pelunasan")
+            <td style="color:orange;">Rp. {{$x->jumlahUang}}</td>
+            @endif
+            @if(isset($x->idTujuan) && $x->idTujuan!=Session::get('account')->idAnggota)
+            <td style="color:red;">-Rp. {{$x->jumlahUang}}</td>
+            @endif
             <td>{{$x->jenisTransaksi}}</td>
             <td>{{$x->waktuTransaksi}}</td>
-            
+            <td>{{$x->idTujuan}}</td>
         </tr>
         
     @endforeach

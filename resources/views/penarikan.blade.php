@@ -6,7 +6,7 @@
 <div class="kotakTf">
     <center><h1 style="font-size: 30px; font-family: sans-serif">Penarikan</h1></center>
     <div id="formTarik">
-    <form method="post" action="transaksi/lunas">
+    <form method="post" action="transaksi/tarik">
     {{csrf_field()}}
                 Pilih tempat pembayaran
                 <div class="form-check">

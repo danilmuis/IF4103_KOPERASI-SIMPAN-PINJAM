@@ -20,11 +20,24 @@
         <tr onclick="window.location='home/detail/<?php echo e($x->noTransaksi); ?>'">
         
             <th scope="row"><?php echo e($x->noTransaksi); ?></th>
-            
-            <td><?php echo e($x->jumlahUang); ?></td>
+            <?php if($x->jenisTransaksi=="Simpanan" || $x->idTujuan==Session::get('account')->idAnggota): ?>
+            <td style="color:green;">+Rp. <?php echo e($x->jumlahUang); ?></td>
+            <?php endif; ?>
+            <?php if($x->jenisTransaksi=="Penarikan"): ?>
+            <td style="color:red;">-Rp. <?php echo e($x->jumlahUang); ?></td>
+            <?php endif; ?>
+            <?php if($x->jenisTransaksi=="Pinjaman"): ?>
+            <td style="color:purple;">Rp. <?php echo e($x->jumlahUang); ?></td>
+            <?php endif; ?>
+            <?php if($x->jenisTransaksi=="Pelunasan"): ?>
+            <td style="color:orange;">Rp. <?php echo e($x->jumlahUang); ?></td>
+            <?php endif; ?>
+            <?php if(isset($x->idTujuan) && $x->idTujuan!=Session::get('account')->idAnggota): ?>
+            <td style="color:red;">-Rp. <?php echo e($x->jumlahUang); ?></td>
+            <?php endif; ?>
             <td><?php echo e($x->jenisTransaksi); ?></td>
             <td><?php echo e($x->waktuTransaksi); ?></td>
-            
+            <td><?php echo e($x->idTujuan); ?></td>
         </tr>
         
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

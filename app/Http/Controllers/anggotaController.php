@@ -22,7 +22,9 @@ class anggotaController extends Controller
             $data = DB::table('akun')
             ->Join('transaksi', 'akun.idAnggota', '=', 'transaksi.idAnggota')
             ->where('akun.idAnggota',Session::get('account')->idAnggota)
+            ->orWhere('transaksi.idTujuan',Session::get('account')->idAnggota)
             ->select('*')
+            ->orderBy('transaksi.noTransaksi','asc')
             ->get();
             return view('home',['data'=>$data]);
         }    
@@ -34,8 +36,7 @@ class anggotaController extends Controller
         $validator = Validator::make($data->all(),[
             'nik' => 'required|numeric|min:16|unique:anggota',
             'namaLengkap' => 'required|alpha',
-            'alamat' => 'required|alpha_num|',
-            'TTL' => 'required|alpha_num|',
+            'alamat' => 'required|alpha_num',
             'username' => 'required|alpha_num|unique:akun|min:4|max:10',
             'psw' => 'required|alpha_num|min:4|max:10',
             'tempat' => 'required|alpha'
