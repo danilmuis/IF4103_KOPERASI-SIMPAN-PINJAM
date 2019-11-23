@@ -1,6 +1,6 @@
 <?php $__env->startSection('pojok_kanan'); ?>
 <button style="background-color: white; width: 60px" onclick="document.getElementById('modal-wrapper').style.display='block'"  >Login</button>
-    <a href=" <?php echo e(action('homeController@registrasi')); ?>"><button style="background-color: navy; border: 1px solid white; color: white; width: 60px">Daftar</button></a>
+    <a href=" <?php echo e(action('anggotaController@registrasi')); ?>"><button style="background-color: navy; border: 1px solid white; color: white; width: 60px">Daftar</button></a>
     
 
 
