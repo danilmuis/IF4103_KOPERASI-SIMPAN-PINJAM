@@ -7,22 +7,20 @@
 @section ('body')
 <table class="table table-hover table-info">
   <thead>
-    <tr>
-      <th scope="col">Id</th>
+    <tr >
+      <th scope="col">Id Anggota</th>
       <th scope="col">Nama Lengkap</th>
-      <th scope="col">Username</th>
-      <th scope="col">Kredit</th>
-      <th scope="col">Debit</th>
+      
     </tr>
   </thead>
   <tbody>
+  
     @foreach($data as $x)
-        <tr>
+        <tr onclick="window.location='homePengurus/detail/{{$x->NIK}}'">
             <th scope="row">{{$x->idAnggota}}</th>
             <td>{{$x->namaLengkap}}</td>
-            <td>{{$x->username}}</td>
-            <td>{{$x->kredit}}</td>
-            <td>{{$x->debit}}</td>
+            
+            
         </tr>
     @endforeach
     

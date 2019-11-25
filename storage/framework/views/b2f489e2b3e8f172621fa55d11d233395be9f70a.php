@@ -439,10 +439,15 @@ comment */
     if(Session::get('login'))
     {
         $x="/home";
+        if(Session::get('account')->idAnggota < 1000){
+        $x="/homePengurus";
+    }
     }else{
         $x="";
     }
-    ?>            
+    
+    ?>
+                
               <nav class="navbar navbar-dark sticky-top nav1">
                 <a class="navbar-brand" href="<?php echo e(url('/')); ?><?php echo e($x); ?>"><img id="logo" src="<?php echo e(url('assets/logo1.png')); ?>" style="height: 50px" alt=""></a>
                 <div id="ld" style="float:right">

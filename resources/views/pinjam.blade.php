@@ -9,9 +9,9 @@
         {{csrf_field()}}
         <div class="posisi" id="formPinjam">
             Nominal uang yang akan dipinjam <br>
-            Rp. <input type="text" name="jumlahUang" required id="ktkPinjam">
+            Rp. <input type="text" name="jumlahUang" required id="ktkPinjam" placeholder="@if($errors->any()) {{$errors->first()   }} @endif">
             <br> <br>
-            <input id="tmbl" type="submit" value="Selesai">
+            <input id="tmbl" type="submit" value="Selesai" >
         </div>
     </form>
 </div>

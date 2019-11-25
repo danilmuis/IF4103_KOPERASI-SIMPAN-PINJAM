@@ -14,7 +14,16 @@ class transaksiController extends Controller
 {
     public function simpan(Request $data)
     {
-        
+        $validator = Validator::make($data->all(),[
+            
+            'jumlahUang' => 'required|numeric|gt:0'
+        ]);
+        if($validator ->fails())
+        {
+            return redirect('home/simpanan')
+                ->withErrors($validator)
+                ->withInput();
+        }
         $akun = Session::get('account');
         $noTransaksi = DB::table('transaksi')->count()+1;
         $transaksi=[
@@ -35,6 +44,16 @@ class transaksiController extends Controller
     }
     public function pinjam(Request $data)
     {
+        $validator = Validator::make($data->all(),[
+            
+            'jumlahUang' => 'required|numeric|gt:0'
+        ]);
+        if($validator ->fails())
+        {
+            return redirect('home/pinjaman')
+                ->withErrors($validator)
+                ->withInput();
+        }
         $akun = Session::get('account');
         $noTransaksi = DB::table('transaksi')->count()+1;
         
@@ -64,6 +83,23 @@ class transaksiController extends Controller
            'idAnggota' => $akun->idAnggota,
            'idTujuan' =>$data->tujuan
         ];
+        $akun_tujuan = \App\akun::where('idAnggota',$data->tujuan)->first();
+        if(!isset($akun_tujuan)){
+            return redirect('/home/transferan')->withErrors('NO AKUN TIDAK DITEMUKAN');
+        }
+        if($akun_tujuan->idAnggota == $akun->idAnggota){
+            return redirect('/home/transferan')->withErrors('TIDAK BOLEH TRANSFER KE AKUN SENDIRI');
+        }
+        $validator = Validator::make($data->all(),[
+            
+            'jumlahUang' => 'required|numeric|lte:'.$akun->debit
+        ]);
+        if($validator ->fails())
+        {
+            return redirect('home/transferan')
+                ->withErrors($validator)
+                ->withInput();
+        }
         \App\transaksi::create($transaksi);
 
         \App\akun::where('idAnggota', $akun->idAnggota)
@@ -71,7 +107,7 @@ class transaksiController extends Controller
         $hasilupdate = \App\akun::where('idAnggota', $akun->idAnggota)->first();
         Session::put('account', $hasilupdate);
         
-        $akun_tujuan = \App\akun::where('idAnggota',$data->tujuan)->first();
+        
         \App\akun::where('idAnggota',$data->tujuan)
             ->update(['debit' => $akun_tujuan->debit + $data->jumlahUang]);
         return redirect()->action('transaksiController@detailx',['noTransaksi'=>$transaksi['noTransaksi']]);
@@ -79,6 +115,7 @@ class transaksiController extends Controller
     
     public function tarik(Request $data)
     {
+        
         $akun = Session::get('account');
         $noTransaksi = DB::table('transaksi')->count()+1;
         $transaksi=[
@@ -88,6 +125,16 @@ class transaksiController extends Controller
            'mediaPembayaran' => $data->pembayaran,
            'idAnggota' => $akun->idAnggota
         ];
+        $validator = Validator::make($data->all(),[
+            
+            'jumlahUang' => 'required|numeric|gt:0|lte:'.$akun->debit
+        ]);
+        if($validator ->fails())
+        {
+            return redirect('home/penarikan')
+                ->withErrors($validator)
+                ->withInput();
+        }
         \App\transaksi::create($transaksi);
         \App\akun::where('idAnggota', $akun->idAnggota)
           ->update(['debit' => $akun->debit-$data->jumlahUang]);
@@ -107,10 +154,20 @@ class transaksiController extends Controller
            'mediaPembayaran' => $data->pembayaran,
            'idAnggota' => $akun->idAnggota
         ];
+        $validator = Validator::make($data->all(),[
+            
+            'jumlahUang' => 'required|numeric|gt:0|lte:'.$akun->kredit
+        ]);
+        if($validator ->fails())
+        {
+            return redirect('home/pelunasan')
+                ->withErrors($validator)
+                ->withInput();
+        }
        \App\transaksi::create($transaksi);
 
         \App\akun::where('idAnggota', $akun->idAnggota)
-          ->update(['kredit' => $akun->kredit-$data->jumlahUang,'debit'=> $akun->debit-$data->jumlahUang]
+          ->update(['kredit' => $akun->kredit-$data->jumlahUang]
                     
         );
         $hasilupdate = \App\akun::where('idAnggota', $akun->idAnggota)->first();

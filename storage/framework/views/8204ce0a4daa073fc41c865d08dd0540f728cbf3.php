@@ -9,9 +9,9 @@
 
         <div class="posisi" id="formPinjam">
             Nominal uang yang akan dipinjam <br>
-            Rp. <input type="text" name="jumlahUang" required id="ktkPinjam">
+            Rp. <input type="text" name="jumlahUang" required id="ktkPinjam" placeholder="<?php if($errors->any()): ?> <?php echo e($errors->first()); ?> <?php endif; ?>">
             <br> <br>
-            <input id="tmbl" type="submit" value="Selesai">
+            <input id="tmbl" type="submit" value="Selesai" >
         </div>
     </form>
 </div>

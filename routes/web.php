@@ -20,7 +20,8 @@ Route::post('login','homeController@login');
 
 
 Route::get('homePengurus','pengurusController@index');
-
+Route::get('homePengurus/detail/{idAnggota}','pengurusController@detail');
+Route::get('homePengurus/riwayat/{idAnggota}','pengurusController@riwayat');
 
 Route::get('home','anggotaController@home');
 Route::get('registrasi','anggotaController@registrasi'); 

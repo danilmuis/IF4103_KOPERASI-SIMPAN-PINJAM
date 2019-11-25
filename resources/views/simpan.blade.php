@@ -57,7 +57,7 @@
                 </div>
                 <div class="posisi" id="formSimpan">
                     Nominal uang yang akan disimpan <br>
-                    Rp. <input type="text" name="jumlahUang" required id="ktk">
+                    Rp. <input type="text" name="jumlahUang" required id="ktk" placeholder="@if($errors->any()) {{$errors->first()   }} @endif">
                     <br> <br>
                     <input id="tmbl" type="submit" value="Selesai">
                 </div>
