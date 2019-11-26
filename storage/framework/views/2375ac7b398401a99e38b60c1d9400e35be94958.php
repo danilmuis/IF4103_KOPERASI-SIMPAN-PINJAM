@@ -50,7 +50,7 @@ endif;
 unset($__errorArgs, $__bag); ?><br>
             <div id="dalam">
                 <input id="reg5" type="date" class="dateRegis" name="tanggal" required><br><br>
-                <input class="reg6" type="radio" name="agama" value="Islam">Islam    
+                <input class="reg6" type="radio" name="agama" value="Islam" checked>Islam    
                 <input class="reg6" type="radio" name="agama" value="Kristen">Kristen
                 <input class="reg6" type="radio" name="agama" value="Katholik">Katholik
                 <input class="reg6" type="radio" name="agama" value="Budha">Budha

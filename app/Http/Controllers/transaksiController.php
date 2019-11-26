@@ -62,6 +62,7 @@ class transaksiController extends Controller
            'noTransaksi' => "T0".$noTransaksi,
            'jumlahUang' => $data->jumlahUang,
            'jenisTransaksi' => "Pinjaman",
+           'mediaPembayaran' => $data->pembayaran,
            'idAnggota' => $akun->idAnggota
         ];
         \App\transaksi::create($transaksi);
@@ -85,10 +86,10 @@ class transaksiController extends Controller
         ];
         $akun_tujuan = \App\akun::where('idAnggota',$data->tujuan)->first();
         if(!isset($akun_tujuan)){
-            return redirect('/home/transferan')->withErrors('NO AKUN TIDAK DITEMUKAN');
+            return redirect('/home/transferan')->with('akun1','NO AKUN TIDAK DITEMUKAN');
         }
         if($akun_tujuan->idAnggota == $akun->idAnggota){
-            return redirect('/home/transferan')->withErrors('TIDAK BOLEH TRANSFER KE AKUN SENDIRI');
+            return redirect('/home/transferan')->with('akun1','TIDAK BOLEH TRANSFER KE AKUN SENDIRI');
         }
         $validator = Validator::make($data->all(),[
             

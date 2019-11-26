@@ -4,7 +4,10 @@
 <a href="{{url('logout')}}"><button style="background-color: white; width: 60px"  >Logout</button></a>
 @endsection
 @section('body')
+@if(count($data)==0)
+<h1 style="position:relative;left:500px;color:black;">TRANSAKSI TIDAK DITEMUKAN</h1>
 
+@else
 <table class="table table-hover table-info">
   <thead>
     <tr>
@@ -12,11 +15,11 @@
       <th scope="col">Jumlah</th>
       <th scope="col">Jenis Transaksi</th>
       <th scope="col">Waktu Transaksi</th>
-      
+      <th scope="col">Penerima/Pengirim</th>
     </tr>
   </thead>
   <tbody>
-    
+  <div style="float:right">{{$data->render()}}</div>
     @foreach($data as $x)
         
         <tr onclick="window.location='home/detail/{{$x->noTransaksi}}'">
@@ -40,36 +43,15 @@
             <td>{{$x->jenisTransaksi}}</td>
             <td>{{$x->waktuTransaksi}}</td>
             <td>{{$x->idTujuan}}</td>
+            
         </tr>
         
     @endforeach
+    
 
   </tbody>
 </table>
-<div id="demo" class="carousel slide" data-ride="carousel">
-                        <ul class="carousel-indicators">
-                          <li data-target="#demo" data-slide-to="0" class="active"></li>
-                          <li data-target="#demo" data-slide-to="1"></li>
-                          <li data-target="#demo" data-slide-to="2"></li>
-                        </ul>
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="a.jpg" alt="Los Angeles" width="1100" height="500">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="b.jpg" alt="Chicago" width="1100" height="500">  
-                          </div>
-                          <div class="carousel-item">
-                            <img src="a.jpg" alt="New York" width="1100" height="500">   
-                          </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                          <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#demo" data-slide="next">
-                          <span class="carousel-control-next-icon"></span>
-                        </a>
-                      </div>
+@endif
                       <div class="container-fluid" style="background-color: navy;margin-top: 30px; margin-bottom: 100px">
                         <div id="kurs">
                             <div style="width:200px; margin-left: 50px" class="kurs">

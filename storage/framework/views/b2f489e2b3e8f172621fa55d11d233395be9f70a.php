@@ -469,10 +469,18 @@ comment */
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="<?php echo e(url('home/simpanan')); ?>">Simpan</a>
+                                <?php if(Session('login')): ?>
+                                    <?php if(Session::get('account')->kredit > 0): ?>
+                                    <a class="dropdown-item" href="<?php echo e(url('home/pelunasan')); ?>">Bayar Pinjaman</a>
+                                    <?php else: ?>
+                                    <a class="dropdown-item" href="<?php echo e(url('home/pinjaman')); ?>">Pinjam</a>
+                                    <?php endif; ?>
+                                <?php else: ?>
                                 <a class="dropdown-item" href="<?php echo e(url('home/pinjaman')); ?>">Pinjam</a>
+                                <?php endif; ?>
                                 <a class="dropdown-item" href="<?php echo e(url('home/transferan')); ?>">Transfer</a>
                                 <a class="dropdown-item" href="<?php echo e(url('home/penarikan')); ?>">Penarikan</a>
-                                <a class="dropdown-item" href="<?php echo e(url('home/pelunasan')); ?>">Bayar Pinjaman</a>
+                                
                             </div>
                         </li>
                         <li class="nav-item">

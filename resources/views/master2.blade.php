@@ -610,10 +610,15 @@ body {
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{url('home/simpanan')}}">Simpan</a>
+                                @if(Session::get('account')->kredit > 0)
+                                <a class="dropdown-item" href="{{url('home/pelunasan')}}">Bayar Pinjaman</a>
+                                @else
                                 <a class="dropdown-item" href="{{url('home/pinjaman')}}">Pinjam</a>
+                                @endif
                                 <a class="dropdown-item" href="{{url('home/transferan')}}">Transfer</a>
                                 <a class="dropdown-item" href="{{url('home/penarikan')}}">Penarikan</a>
-                                <a class="dropdown-item" href="{{url('home/pelunasan')}}">Bayar Pinjaman</a>
+                                
+                                
                             </div>
                         </li>
                         <li class="nav-item">

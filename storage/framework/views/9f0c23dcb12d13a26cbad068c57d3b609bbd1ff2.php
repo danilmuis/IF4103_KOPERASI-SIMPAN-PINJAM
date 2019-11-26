@@ -10,13 +10,12 @@
     
         <div style="margin-bottom: 50px" class="formTf">
             Masukkan nomor ID tujuan : <br>
-            <input style="width: 320px" type="text" name="tujuan" required class="ktkTf"placeholder="<?php if($errors->any()): ?> <?php echo e($errors->first()); ?> <?php endif; ?>">
+            <input style="width: 320px" type="text" name="tujuan" required class="ktkTf"placeholder="<?php if(Session::has('akun1')): ?> <?php echo e(Session::get('akun1')); ?> <?php endif; ?>">
             <br> <br>
-            <input type="submit" value="Lanjut" id="tmbl">
         </div>            
         <div style="margin-bottom: 50px" class="formTf">
             Nominal uang yang akan disimpan <br>
-            Rp. <input type="text" name="jumlahUang" required class="ktkTf"placeholder="<?php if($errors->any()): ?> <?php echo e($errors->first()); ?> <?php endif; ?>">
+            Rp. <input type="text" name="jumlahUang" required class="ktkTf"  placeholder="<?php if($errors->any()): ?> <?php echo e($errors->first()); ?> <?php endif; ?>">
             <br> <br>
             <input type="submit" value="Selesai" id="tmbl">
         </div>

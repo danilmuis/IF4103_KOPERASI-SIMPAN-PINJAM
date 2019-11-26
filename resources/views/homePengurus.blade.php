@@ -1,4 +1,4 @@
-@extends('master')
+@extends('masterAdmin')
 
 @section('pojok_kanan')
 <a href="{{url('logout')}}"><button style="background-color: white; width: 60px"  >Logout</button></a>
@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-  
+  <div style="float:right">{{$data->render()}}</div>  
     @foreach($data as $x)
         <tr onclick="window.location='homePengurus/detail/{{$x->NIK}}'">
             <th scope="row">{{$x->idAnggota}}</th>

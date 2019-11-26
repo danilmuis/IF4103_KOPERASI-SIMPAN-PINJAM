@@ -8,20 +8,20 @@
     <div id="formTarik">
     <form method="post" action="transaksi/tarik">
     {{csrf_field()}}
-                Pilih tempat pembayaran
+                Pilih tempat pengambilan uang
                 <div class="form-check">
                     <label class="form-check-label">
-                       <input type="radio" class="form-check-input" name="pembayaran">Indomart
+                       <input type="radio" class="form-check-input" value="Indomaret" name="pembayaran" checked>Indomaret
                     </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check-label">
-                       <input type="radio" class="form-check-input" name="pembayaran">Alfamart
+                       <input type="radio" class="form-check-input" value="Koperasi" name="pembayaran">Alfamart
                     </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check-label">
-                       <input type="radio" class="form-check-input" name="pembayaran">Koperasi
+                       <input type="radio" class="form-check-input" value="Koperasi" name="pembayaran">Koperasi
                     </label>
                 </div>
             </div>

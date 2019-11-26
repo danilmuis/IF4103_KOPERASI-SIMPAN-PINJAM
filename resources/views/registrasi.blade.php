@@ -23,7 +23,7 @@
             <input id="reg4"  type="text" class="ktkRegis" placeholder="Tempat Lahir" name="tempat">@error('tempat') <h7 id="error"> {{$message}} </h7> @enderror<br>
             <div id="dalam">
                 <input id="reg5" type="date" class="dateRegis" name="tanggal" required><br><br>
-                <input class="reg6" type="radio" name="agama" value="Islam">Islam    
+                <input class="reg6" type="radio" name="agama" value="Islam" checked>Islam    
                 <input class="reg6" type="radio" name="agama" value="Kristen">Kristen
                 <input class="reg6" type="radio" name="agama" value="Katholik">Katholik
                 <input class="reg6" type="radio" name="agama" value="Budha">Budha

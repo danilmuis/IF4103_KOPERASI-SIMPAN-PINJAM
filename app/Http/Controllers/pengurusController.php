@@ -22,7 +22,7 @@ class pengurusController extends Controller
             $data_anggota =DB::table('akun')
             ->join('anggota', 'akun.nik', '=', 'anggota.nik')
             ->select('*')
-            ->get();
+            ->paginate(10);
             return view('homePengurus',['data' => $data_anggota]);
         }
     }
@@ -42,8 +42,16 @@ class pengurusController extends Controller
             ->where('akun.idAnggota',$idAnggota)
             ->orWhere('transaksi.idTujuan',$idAnggota)
             ->select('*')
-            ->orderBy('transaksi.noTransaksi','asc')
-            ->get();
-            return view('riwayatTransaksi',['data'=>$data]);
+            ->orderBy('transaksi.noTransaksi','desc')
+            ->paginate(10);
+            return view('riwayatTransaksi',['data'=>$data,'anggota'=>$idAnggota]);
+    }
+    public function transaksi(){
+        $data = DB::table('transaksi')
+            
+            ->select('*')
+            ->orderBy('noTransaksi','desc')
+            ->paginate(10);
+        return view('allTransaksi',['data'=>$data]);
     }
 }

@@ -4,18 +4,34 @@
 @endsection
 @section('body')
 <div class="kotakTf">
-    <center><h1 style="font-size: 30px; font-family: sans-serif">Pelunasan</h1></center>
+    <center><h1 style="font-size: 30px; font-family: sans-serif">Bayar Pinjaman</h1></center>
     <div id="formTarik">
     <form method="post" action="transaksi/lunas">
     {{csrf_field()}}
-                           </div>
-            <div class="posisi" id="formBayar">
-                Nominal uang yang akan ditarik <br>
+                Pilih tempat pembayaran
+                <div class="form-check">
+                    <label class="form-check-label">
+                       <input type="radio" class="form-check-input" value="Indomaret" name="pembayaran" checked>Indomaret
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                       <input type="radio" class="form-check-input" value="Koperasi" name="pembayaran">Alfamart
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                       <input type="radio" class="form-check-input" value="Koperasi" name="pembayaran">Koperasi
+                    </label>
+                </div>
+            </div>
+            <div class="posisi" id="formTarik">
+                Nominal uang yang akan dibayarkan <br>
                 Rp. <input type="text" name="jumlahUang" required id="ktk" placeholder="@if($errors->any()) {{$errors->first()   }} @endif">
                 <br> <br>
-                
                 <input id="tmbl" type="submit" value="Selesai" id="tmbl">
             </div>
     </form>
     </div>    
+  
 @endsection
