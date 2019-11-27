@@ -24,7 +24,16 @@
     .nav2{
         background-color: lightblue
     }
+
+    #koperas {
+        position:absolute;
+        top:15px;
+        left:100px;
+    }
     #ld button{
+        position:absolute;
+        top:30px;
+        left:1385px;
         border-radius: 3px;
         border: none;
     }
@@ -47,7 +56,7 @@
         height: 40px;
     }
     .navbar{
-        padding-left: 100px
+        padding-left: 100pxz
     }
     .dropdown-menu{
         background-color: lightblue;
@@ -205,7 +214,6 @@ body {
     box-shadow: #D4D4D4 -1px 1px, #D4D4D4 -2px 2px, #D4D4D4 -3px 3px, #D4D4D4 -4px 4px, #D4D4D4 -5px 5px, #D4D4D4 -6px 6px;
     transform: translate3d(4px, 0px, 0);
     background-color: #D4D4D4;
- 
 	}
 
 	.navigation li { width: 100%; }
@@ -317,7 +325,7 @@ body {
 	}
 	.navigation:hover {
 		  position: fixed;
-	  width: 10em;
+	    width: 10em;
 	}
 
 	.navigation ul { display: block; }
@@ -572,7 +580,8 @@ body {
         text-overflow: ellipsis;
         color:black;
     }
-</style>
+
+    </style>
 </head>
 <body style="padding-top:0px;">
 @if(session('alert'))
@@ -589,15 +598,9 @@ body {
         $x="";
     }
     @endphp            
-              <nav class="navbar navbar-dark sticky-top nav1">
-                <a class="navbar-brand" href="{{ url('/')}}{{$x}}"><img id="logo" src="{{ url('assets/logo1.png')}}" style="height: 50px" alt=""></a>
-                <div id="ld" style="float:right">
-                    @yield('pojok_kanan')
-                    
-                    
-                </div>
-              </nav>
-              <nav id="bawah" class="bawah navbar navbar-expand-sm nav2 justify-content-end" style="padding-right:100px">
+            <nav class="navbar navbar-dark sticky-top nav1" style="height: 87px; z-index:-1;">
+            </nav>
+            <nav id="bawah" class="bawah navbar navbar-expand-sm nav2 justify-content-end" style="padding-right:100px">
                     <ul class="navbar-nav ha">
                         <li class="nav-item">
                             
@@ -622,23 +625,32 @@ body {
                             </div>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#us">About Us</a>
-                      </li>
+                            <a class="nav-link" href="#us">About Us</a>
+                        </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#kontak" style="">Contact Us</a>
                       </li>
                     </ul>
-                  </nav>
-                  <nav class="navigation">
+            </nav>
+                
+            <div id="ld" style="float:right">
+                    @yield('pojok_kanan')
+                    
+                    
+            </div>   
+            <div id=koperas>
+            <a class="navbar-brand" href="{{ url('/')}}{{$x}}" ><img id="logo" src="{{ url('assets/logo1.png')}}"  style="height: 50px"alt=""></a>
+            </div>           
+            <nav class="navigation">
 
-<ul class="menu"><br><br><br><li><a class="active" href="#"><img src="{{url('assets/username.png')}}" width="30px" height="30px"><span title="Username">{{Session::get('account')->username}}</span></a></li>
-    <li><a href="#"><img src="{{url('assets/id.png')}}" width="30px" height="30px"><span title="ID Anggota">{{Session::get('account')->idAnggota}}</span></a></li>
-    <li><a href="#"><img src="{{url('assets/balance.png')}}" width="30px" height="30px"><span title="Debit">Rp. {{Session::get('account')->debit}}</span></a></li>
-    <li><a href="#"><img src="{{url('assets/debt.png')}}" width="30px" height="30px"><span title="Kredit">Rp. {{Session::get('account')->kredit}}</span></a></li>
-    
-</nav>
+                <ul class="menu"><br><br><br><li><a class="active" href="#"><img src="{{url('assets/username.png')}}" width="30px" height="30px"><span title="Username">{{Session::get('account')->username}}</span></a></li>
+                <li><a href="#"><img src="{{url('assets/id.png')}}" width="30px" height="30px"><span title="ID Anggota">{{Session::get('account')->idAnggota}}</span></a></li>
+                <li><a href="#"><img src="{{url('assets/balance.png')}}" width="30px" height="30px"><span title="Debit">Rp. {{Session::get('account')->debit}}</span></a></li>
+                <li><a href="#"><img src="{{url('assets/debt.png')}}" width="30px" height="30px"><span title="Kredit">Rp. {{Session::get('account')->kredit}}</span></a></li>
+                
+            </nav>
 
-                </header>
+</header>
                 @if(session('login'))
   {{Session::get('account')}}   
 @endif
