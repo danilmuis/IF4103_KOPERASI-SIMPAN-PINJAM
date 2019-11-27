@@ -533,7 +533,6 @@ body {
         font-family: sans-serif;
     }
     .foot{
-        width 100px;
         display: inline-block;
         padding-top: 50px;
         padding-bottom: 30px;
@@ -580,7 +579,23 @@ body {
         text-overflow: ellipsis;
         color:black;
     }
-
+    .aboutus {
+        color:black; 
+        font-weight:bold; 
+        margin:0; 
+        padding-top:0;
+        padding-left:0;
+        padding-right:0;
+        padding-bottom:30px; 
+        line-height:0;
+        font-size:40px;
+        /* font-family:sans-serif; */
+        text-transform: capitalize;
+    }
+    .ket {
+        line-height:2;
+        font-size:15px;  
+    }
     </style>
 </head>
 <body style="padding-top:0px;">
