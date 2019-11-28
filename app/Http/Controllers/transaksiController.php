@@ -93,7 +93,7 @@ class transaksiController extends Controller
         }
         $validator = Validator::make($data->all(),[
             
-            'jumlahUang' => 'required|numeric|lte:'.$akun->debit
+            'jumlahUang' => 'required|numeric|gt:0|lte:'.$akun->debit
         ]);
         if($validator ->fails())
         {
