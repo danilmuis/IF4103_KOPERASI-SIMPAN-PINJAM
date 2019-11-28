@@ -34,7 +34,7 @@ class anggotaController extends Controller
     public function create(Request $data)
     {
         $validator = Validator::make($data->all(),[
-            'nik' => 'required|numeric|min:16|max:16|unique:anggota',
+            'nik' => 'required|numeric|digits:16|unique:anggota',
             'namaLengkap' => 'required',
             'alamat' => 'required',
             'username' => 'required|alpha_num|unique:akun|min:4|max:10',
