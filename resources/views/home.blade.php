@@ -15,7 +15,7 @@
       <th scope="col">Jumlah</th>
       <th scope="col">Jenis Transaksi</th>
       <th scope="col">Waktu Transaksi</th>
-      <th scope="col">Penerima/Pengirim</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -42,7 +42,7 @@
             @endif
             <td>{{$x->jenisTransaksi}}</td>
             <td>{{$x->waktuTransaksi}}</td>
-            <td>{{$x->idTujuan}}</td>
+            
             
         </tr>
         
