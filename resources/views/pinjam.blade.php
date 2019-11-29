@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-check">
                     <label class="form-check-label">
-                       <input type="radio" class="form-check-input" value="Koperasi" name="pembayaran">Alfamart
+                       <input type="radio" class="form-check-input" value="Alfamart" name="pembayaran">Alfamart
                     </label>
                 </div>
                 <div class="form-check">
