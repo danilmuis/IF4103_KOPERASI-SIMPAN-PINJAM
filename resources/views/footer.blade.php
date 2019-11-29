@@ -7,7 +7,7 @@
                             
                             <div class="col-2">
                                 <div class="foot" style="width: 400px; padding-left: 30px;" id="us">
-                                        <h1 class="aboutus">About Us</h1>
+                                        <h1 style="color:white;" class="aboutus">About Us</h1>
                                         <p style="color:white;" class="ket">Koperasi Simpan Pinjam merupakan badan usaha yang dimiliki oleh anggota dan dikelola oleh anggotanya sendiri.<br>
                                         Kami memiliki sebuah web yang dapat digunakan untuk mempermudah alur transaksi. Namun, anggota koperasi <br>
                                         tetap harus datang langsung ke koperasi untuk melakukan konfirmasi pada transaksi yang dilakukan.</p>
@@ -19,12 +19,12 @@
                             </div>
                             <div class="col-2">
                                 <div class="foot" id="kontak">
-                                    <H6 style="font-size: 20px; width: 300px">Kantor Pusat</H3>
+                                    <H6 style="font-size: 20px; width: 300px; color: white">Kantor Pusat</H3>
                                     <p style="color:white;">Jl. blablablablablablablablablablablabla</p>
                                 
-                                    <h6 style="font-size: 20px; width: 300px">Hubungi Kami</h6>
-                                    Telp: 14045, +62-21-5XXXXXXX <br>
-                                    Fax: +62-21-5XXXXXXX <br>
+                                    <h6 style="font-size: 20px; width: 300px; color:white">Hubungi Kami</h6>
+                                    Telp: 14045, +62-21-54544545 <br>
+                                    Fax: +62-21-53533535 <br>
                                     Email: ksppeduli@koperasisimpanpinjam.co.id <br>
                                 </div>
                             </div>
