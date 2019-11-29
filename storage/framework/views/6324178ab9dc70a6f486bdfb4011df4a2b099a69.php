@@ -13,7 +13,7 @@
       <th scope="col">Jumlah</th>
       <th scope="col">Jenis Transaksi</th>
       <th scope="col">Waktu Transaksi</th>
-      <th scope="col">Penerima/Pengirim</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -40,7 +40,7 @@
             <?php endif; ?>
             <td><?php echo e($x->jenisTransaksi); ?></td>
             <td><?php echo e($x->waktuTransaksi); ?></td>
-            <td><?php echo e($x->idTujuan); ?></td>
+            
             
         </tr>
         
