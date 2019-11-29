@@ -426,9 +426,7 @@ comment */
 </head>
 <body>
 
-@if(session('login'))
-  {{Session::get('account')}}   
-@endif
+
 @if(session('alert'))
     <script>
       alert('{{session('alert')}}');

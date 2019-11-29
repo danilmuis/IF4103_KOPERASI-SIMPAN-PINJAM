@@ -15,7 +15,7 @@
         $x = "Melalui";
     }
 @endphp
-{{$data}}
+
 <div class="buktiTransaksi">
 
 Transaksi kamu dicatat dengan nomor transaksi<br><br> <h1 style="color:red">{{$data->noTransaksi}}</h1>

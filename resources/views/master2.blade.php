@@ -666,9 +666,8 @@ body {
             </nav>
 
 </header>
-                @if(session('login'))
-  {{Session::get('account')}}   
-@endif
+               
+
 
 	<!-- bagian konten blog -->
 	@yield('body')

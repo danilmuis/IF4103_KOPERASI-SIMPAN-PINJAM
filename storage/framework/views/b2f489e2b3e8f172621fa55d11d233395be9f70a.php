@@ -426,9 +426,7 @@ comment */
 </head>
 <body>
 
-<?php if(session('login')): ?>
-  <?php echo e(Session::get('account')); ?>   
-<?php endif; ?>
+
 <?php if(session('alert')): ?>
     <script>
       alert('<?php echo e(session('alert')); ?>');
