@@ -20,7 +20,7 @@
                             <div class="col-2">
                                 <div class="foot" id="kontak">
                                     <H6 style="font-size: 20px; width: 300px; color: white">Kantor Pusat</H3>
-                                    <p style="color:white;">Jl. blablablablablablablablablablablabla</p>
+                                    <p style="color:white;">Jl. Budi Setiawan Binomo No.00</p>
                                 
                                     <h6 style="font-size: 20px; width: 300px; color:white">Hubungi Kami</h6>
                                     Telp: 14045, +62-21-54544545 <br>

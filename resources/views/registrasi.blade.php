@@ -33,6 +33,7 @@
         </div>
         <div id="second_registrasi">
             <input type="text" placeholder="Username" name="username" required>@error('uname') <h7 id="error"> {{$message}} </h7> @enderror<br>
+            <span style="margin-left:30px; color:red"> *username harus minimal 4 karakter</span> <br>
             <input type="password" placeholder="Password" name="psw" required>@error('psw') <h7 id="error"> {{$message}} </h7> @enderror<br>
             <input type="password" placeholder="Re-Enter Password" name="psw2" required><br><br>
             <input id="reg" type="submit" style="margin-left:50px" value="registrasi">
