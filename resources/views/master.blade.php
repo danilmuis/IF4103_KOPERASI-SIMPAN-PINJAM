@@ -406,7 +406,7 @@
         -moz-box-sizing: content-box;
         box-sizing: content-box;
         width: 533px;
-        height: 330px;
+        height: 360px;
         padding:30px;
         margin: 109px 309px 109px 509px;
         border: 4px solid rgba(93,178,234,0.91);
