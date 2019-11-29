@@ -6,9 +6,9 @@
                         <div class="row">
                             
                             <div class="col-2">
-                                <div class="foot" style="width: 400px; padding-left: 30px" id="us">
-                                        <h1>About Us</h1>
-                                        <p>Koperasi Simpan Pinjam merupakan badan usaha yang dimiliki oleh anggota dan dikelola oleh anggotanya sendiri.<br>
+                                <div class="foot" style="width: 400px; padding-left: 30px;" id="us">
+                                        <h1 class="aboutus">About Us</h1>
+                                        <p style="color:white;" class="ket">Koperasi Simpan Pinjam merupakan badan usaha yang dimiliki oleh anggota dan dikelola oleh anggotanya sendiri.<br>
                                         Kami memiliki sebuah web yang dapat digunakan untuk mempermudah alur transaksi. Namun, anggota koperasi <br>
                                         tetap harus datang langsung ke koperasi untuk melakukan konfirmasi pada transaksi yang dilakukan.</p>
                                         <br>
@@ -20,7 +20,7 @@
                             <div class="col-2">
                                 <div class="foot" id="kontak">
                                     <H6 style="font-size: 20px; width: 300px">Kantor Pusat</H3>
-                                    <p>Jl. blablablablablablablablablablablabla</p>
+                                    <p style="color:white;">Jl. blablablablablablablablablablablabla</p>
                                 
                                     <h6 style="font-size: 20px; width: 300px">Hubungi Kami</h6>
                                     Telp: 14045, +62-21-5XXXXXXX <br>
