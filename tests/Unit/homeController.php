@@ -1,15 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Tests\Unit;
 
-use Auth;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class homeController extends Controller
+class homeController extends TestCase
 {
     public function index()
     {
