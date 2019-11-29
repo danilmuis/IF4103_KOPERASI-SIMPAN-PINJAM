@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <link rel="shortcut icon" href="http://localhost/IF4103_KOPERASI-SIMPAN-PINJAM/public/assets/logo.png=">
+        <link rel="icon" href="{{ url('assets/logo.png')}}"/>
         <title>Koperasi Simpan Pinjam</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
