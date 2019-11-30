@@ -14,7 +14,7 @@
             <br> <br>
         </div>            
         <div style="margin-bottom: 50px;width: 320px;" class="formTf">
-            Nominal uang yang akan disimpan <br>
+            Nominal uang yang akan ditransfer <br>
             Rp. <input style="width: 320px;" type="text" name="jumlahUang" required class="ktkTf"  placeholder="@if($errors->any()) {{$errors->first()   }} @endif">
             <br> <br>
             <input type="submit" value="Selesai" id="tmbl">
